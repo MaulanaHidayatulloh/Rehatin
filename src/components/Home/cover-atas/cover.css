@@ -1,0 +1,62 @@
+@import "../../../vars.css";
+
+.cover {
+  position: relative;
+  display: block;
+  background: linear-gradient(rgba(70, 131, 146, 0.4), rgba(70, 131, 146, 0.4)),
+    url(../src/assets/Home/jakarta.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cover-top {
+  align-items: center;
+  line-height: 1.2;
+  padding: 5rem 0;
+}
+
+.cover-top h1 {
+  font-weight: 600;
+  font-size: 5rem;
+  color: var(--color-bg);
+  letter-spacing: 0.15em;
+}
+
+.cover-top h3 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--color-bg);
+  letter-spacing: 0.15em;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-container input[type="text"] {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  flex: 1;
+  border-radius: 10px;
+  padding: 8px;
+  padding-left: 30px;
+}
+
+.search-container button {
+  border: none;
+  outline: none;
+  background-color: var(--color-hover);
+  border-radius: 10px;
+  padding: 10px 30px;
+  color: var(--color-bg);
+}

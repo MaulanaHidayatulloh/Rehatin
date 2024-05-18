@@ -1,0 +1,50 @@
+@import "../../../vars.css";
+
+.home {
+  position: relative;
+  gap: 5rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-bg);
+  border-radius: 2rem;
+  margin-top: -1.5rem;
+}
+
+.home .home-content {
+  text-align: left;
+}
+
+.home .home-content {
+  max-width: auto;
+  padding-top: 2rem;
+}
+
+.home-content h1 {
+  font-weight: 600;
+  line-height: 1.05;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.home-content h2 {
+  font-weight: 600;
+  padding-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--color-Fifth);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.home-content p {
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.home-content button {
+  border: none;
+  outline: none;
+  background-color: var(--color-Fifth);
+  border-radius: 100px;
+  padding: 10px 60px;
+  color: var(--color-bg);
+}

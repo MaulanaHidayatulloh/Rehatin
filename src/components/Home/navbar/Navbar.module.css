@@ -1,0 +1,56 @@
+@import "../../../vars.css";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.7rem 7%;
+  background-color: var(--color-Fifth);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbarLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  font-size: 1.1rem;
+  margin-right: 2rem;
+  color: var(--color-bg);
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.extra {
+  padding: 0.5rem 2rem;
+  background-color: var(--color-hover);
+  border-radius: 5px;
+  font-weight: 600;
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--color-bg);
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.homeNav {
+  background-color: var(--color-hover);
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.login {
+  background-color: var(--color-Fifth);
+  border: 1px solid var(--color-bg);
+}
