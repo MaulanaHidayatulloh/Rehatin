@@ -1,0 +1,72 @@
+@import "../../../vars.css";
+
+.recommendation-section {
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.recommendation-title {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.recommendation-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.recommendation-tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.recommendation-tab.active {
+  background-color: var(--color-Fifth);
+  color: #fff;
+}
+
+.recommendation-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.recommendation-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.recommendation-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 10px;
+}
+
+.recommendation-card-caption {
+  padding: 10px;
+  text-align: left;
+}
+
+.recommendation-card-caption h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.recommendation-card-caption p {
+  font-size: 1.2rem;
+  color: var(--color-Fifth);
+  letter-spacing: 0.2em;
+}

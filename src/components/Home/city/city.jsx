@@ -5,7 +5,6 @@ function City() {
   return (
     <section className="menu">
       <h2>Which city do you choose in Jabodetabek & Bandung</h2>
-
       <div className="row">
         <a href="#" className="menu-card" id="jakarta">
           <h3>Jakarta</h3>

@@ -4,6 +4,8 @@ import Navbar from "../components/Home/navbar/navbar";
 import AboutUs from "../components/Home/about-us/aboutus";
 import Cover from "../components/Home/cover-atas/cover";
 import City from "../components/Home/city/city";
+import Event from "../components/Home/event/event";
+import Recommendation from "../components/Home/recommendation/recommendation";
 
 const HomePage = () => {
   return (
@@ -12,6 +14,8 @@ const HomePage = () => {
       <Cover />
       <AboutUs />
       <City />
+      <Recommendation />
+      <Event />
       <CardCategory />
       <Footer />
     </div>
