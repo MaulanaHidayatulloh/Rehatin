@@ -1,14 +1,22 @@
 import "./App.css";
-import Navbar from "./components/Home/navbar/navbar";
-import AboutUs from "./components/Home/about-us/aboutus";
-import Cover from "./components/Home/cover-atas/cover";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPages";
+import WishlistPage from "./pages/WishlistPage";
+import GalleryPage from "./pages/GalleryPages";
+import BlogPage from "./pages/BlogPage";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Cover />
-      <AboutUs />
+      <Routes>
+        <Route path="/" Component={HomePage} />
+        <Route path="/aboutUs" Component={AboutPage} />
+        <Route path="/wishlist" Component={WishlistPage} />
+        <Route path="/gallery" Component={GalleryPage} />
+        <Route path="/blog" Component={BlogPage} />
+      </Routes>
     </div>
   );
 }

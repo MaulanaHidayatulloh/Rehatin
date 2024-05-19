@@ -3,11 +3,11 @@ import "./aboutus.css";
 
 function AboutUs() {
   return (
-    <section class="home">
-      <div class="home-img">
+    <section className="home">
+      <div className="home-img">
         <img src="../src/assets/Home/about-us.png" alt="" />
       </div>
-      <div class="home-content">
+      <div className="home-content">
         <h2>ABOUT US</h2>
         <h1>WE ARE READY TO HELP YOU FIND A FUN PLACE TO HANGOUT</h1>
         <p>
