@@ -1,10 +1,14 @@
+@import "../../../vars.css";
+
 .footer-page {
+  height: 100%;
   padding-top: 2rem;
   color: var(--color-text);
+  background-color: var(--color-section);
 }
 .sec-footer {
-  padding: 2rem;
-  background-color: var(--color-section);
+  height: 100%;
+  padding: 3rem;
   text-align: justify;
 }
 

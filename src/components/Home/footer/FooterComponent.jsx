@@ -12,14 +12,14 @@ function Footer() {
       <Navbar className="sec-footer">
         <Container>
           <Row className="gap-3">
-            <Col sm={4}>
+            <Col sm={5}>
               <h5>Rehatin</h5>
               <p className="text-align-justify">
                 "Temukan kebahagiaan di setiap sudut kota! Nikmati rekomendasi
                 tempat hiburan terbaik untuk pengalaman tak terlupakan. "
               </p>
             </Col>
-            <Col sm={3}>
+            <Col sm={2}>
               <h5>Information</h5>
               <ul>
                 <li>
@@ -63,7 +63,7 @@ function Footer() {
       <Navbar className="copyright">
         <Container>
           <Navbar.Collapse className="justify-content-center">
-            <Navbar.Text className="copyright-text">
+            <Navbar.Text className="copyright-text text-white">
               Copyright &#169; 2024. All rights reserved.
             </Navbar.Text>
           </Navbar.Collapse>

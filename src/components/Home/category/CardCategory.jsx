@@ -1,21 +1,70 @@
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import "./CardCategory.css";
+import React from "react";
 
 function CardCategory() {
   return (
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    <div className="kategori">
+      <h4 className="fw-bold">Choose your Favorite Cathegories!</h4>
+      <Container className="sec-card">
+        <Row>
+          <Col xs={3} className="card-kategori">
+            <Card className="card park text-white">
+              <Card.Img
+                className="img img-kategori img-park"
+                src="src\assets\Home\Category\Gambar katagori\0-park.jpg"
+                alt="Card image"
+              />
+              <Card.ImgOverlay className="fw-bold text-wrap">
+                <Card.Text className="card-text ">Park</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+
+          <Col sm={3} className="card-kategori">
+            <Card className="card museum text-white">
+              <Card.Img
+                className="img img-kategori img-museum"
+                src="src\assets\Home\Category\Gambar katagori\0-museum.webp"
+                alt="Card image"
+              />
+              <Card.ImgOverlay className="fw-bold text-wrap">
+                <Card.Text className="card-text ">Museum</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+          <Col sm={3} className="card-kategori">
+            <Card className="card eatry text-white">
+              <Card.Img
+                className="img img-kategori img-eatry"
+                src="src\assets\Home\Category\Gambar katagori\0-eatery.jpg"
+                alt="Card image"
+              />
+              <Card.ImgOverlay className="fw-bold text-wrap">
+                <Card.Text className="card-text ">Eatry</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+
+          <Col sm={3} className="card-kategori">
+            <Card className="card playground text-white">
+              <Card.Img
+                className="img img-kategori img-playground"
+                src="src/assets/Home/Category/Gambar katagori/0-wahana.jpg"
+                alt="Card image"
+              />
+              <Card.ImgOverlay className="fw-bold text-wrap">
+                <div className="layer"></div>
+                <Card.Text className="card-text">Playground</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

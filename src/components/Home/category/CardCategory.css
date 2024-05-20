@@ -1,0 +1,52 @@
+@import "../../../vars.css";
+
+/* section kategori tempat */
+.kategori {
+    padding: 3rem;
+    
+}
+.kategori h4{
+    text-align: center;
+    padding: 2rem;
+}
+.kategori .img {
+    height: 15rem ;
+    width: 100%;
+    justify-content: center;
+    transform: translateY(-40%);
+}
+
+.kategori div.col {
+    padding: 1rem;
+}
+
+.card {
+    width: 15rem;
+    position: absolute;
+    border: none;
+}
+
+.card-kategori {
+    height: fit-content;
+}
+
+.card-text {
+    height: 100%;
+    font-size:x-large;
+    text-align: center;
+    margin-top: 90px;
+    text-shadow: 1px 3px 1px rgba(5, 5, 5, .5);
+}
+
+.text-wrap {
+    position: absolute;
+    height: 15rem;
+}
+
+.text-wrap:hover{
+    background: rgba(0, 0, 0, .5);
+}
+
+.sec-card {
+    padding: 0 5rem;
+}
