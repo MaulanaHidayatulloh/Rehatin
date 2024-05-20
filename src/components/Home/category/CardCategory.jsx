@@ -23,7 +23,6 @@ function CardCategory() {
               </Card.ImgOverlay>
             </Card>
           </Col>
-
           <Col sm={3} className="card-kategori">
             <Card className="card museum text-white">
               <Card.Img
@@ -48,7 +47,6 @@ function CardCategory() {
               </Card.ImgOverlay>
             </Card>
           </Col>
-
           <Col sm={3} className="card-kategori">
             <Card className="card playground text-white">
               <Card.Img

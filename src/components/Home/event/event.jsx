@@ -36,32 +36,32 @@ const Event = () => {
         transitionDuration={1000}
         ltr={true}
       >
-        <div className="card" id="elite">
+        <div className="card-event" id="elite">
           <a href="#" className="link">
             <h3>The Elite Showcase</h3>
           </a>
         </div>
-        <div className="card" id="pesta">
+        <div className="card-event" id="pesta">
           <a href="#" className="link">
             <h3>Pesta Bebas Berselancar</h3>
           </a>
         </div>
-        <div className="card" id="waku">
+        <div className="card-event" id="waku">
           <a href="#" className="link">
             <h3>Waku - Waku Festival</h3>
           </a>
         </div>
-        <div className="card" id="prj">
+        <div className="card-event" id="prj">
           <a href="#" className="link">
             <h3>Pekan Raya Jakarta</h3>
           </a>
         </div>
-        <div className="card" id="sound">
+        <div className="card-event" id="sound">
           <a href="#" className="link">
             <h3>The Sounds Project</h3>
           </a>
         </div>
-        <div className="card" id="jdm">
+        <div className="card-event" id="jdm">
           <a href="#" className="link">
             <h3>JDM Fest Bandung</h3>
           </a>
