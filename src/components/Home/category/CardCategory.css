@@ -2,8 +2,8 @@
 
 /* section kategori tempat */
 .kategori {
-    padding: 3rem;
-    
+  padding: 3rem;
+  padding-bottom: 6rem;
 }
 .kategori h2{
     text-align: center;
@@ -29,20 +29,18 @@
 }
 
 .card-text {
-    height: 100%;
-    font-size:x-large;
-    text-align: center;
-    margin-top: 90px;
-    text-shadow: 1px 3px 1px rgba(5, 5, 5, .5);
+  font-size: 2rem;
+  text-align: center;
+  margin: 120px 0;
+  text-shadow: 1px 3px 1px rgba(5, 5, 5, 0.5);
 }
 
 .text-wrap {
-    position: absolute;
-    height: 15rem;
+  position: absolute;
 }
 
-.text-wrap:hover{
-    background: rgba(0, 0, 0, .5);
+.text-wrap:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .sec-card {
