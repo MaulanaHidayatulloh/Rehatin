@@ -12,50 +12,67 @@ function Footer() {
       <Navbar className="sec-footer">
         <Container>
           <Row className="gap-3">
-            <Col sm={5}>
-              <h5>Rehatin</h5>
-              <p className="text-align-justify">
+            <Col sm={4}>
+              <h5><img src="public\logo\logo-rehatin-w.png" /></h5>
+              <p className="text-align-justify me-5">
                 "Temukan kebahagiaan di setiap sudut kota! Nikmati rekomendasi
                 tempat hiburan terbaik untuk pengalaman tak terlupakan. "
               </p>
             </Col>
+            <Col sm={1} className="me-4">
+              <h5>Place</h5>
+              <ul>
+                <li>
+                  <a href="">Park</a>
+                </li>
+                <li>
+                  <a href="">Museum</a>
+                </li>
+                <li>
+                  <a href="">Eatry</a>
+                </li>
+                <li>
+                  <a href="">Playground</a>
+                </li>
+              </ul>
+            </Col>
             <Col sm={2}>
-              <h5>Information</h5>
+              <h5>About Rehatin</h5>
               <ul>
                 <li>
                   <a href="">About Us</a>
                 </li>
                 <li>
-                  <a href="">Gallery</a>
+                  <a href="">Contact Us</a>
                 </li>
                 <li>
-                  <a href="">Blog</a>
+                  <a href="">Help center</a>
                 </li>
               </ul>
             </Col>
-            <Col sm={3}>
+
+            <Col sm={2}>
+            <h5>Follow Us On</h5>
+            <ul >
+                <li className="icon-follow">
+                  <a href=""><Icon.Tiktok/> Tiktok</a>
+                </li>
+                <li className="icon-follow">
+                  <a href=""><Icon.Youtube/> Youtube</a>
+                </li>
+                <li className="icon-follow">
+                  <a href=""><Icon.Instagram/> Instagram</a>
+                </li>
+              </ul>
+            </Col>
+
+            <Col sm={2}>
               <h5>Address</h5>
               <p className="text-align-justify">
                 JL TB Simatupang Kav 1-S, Cilandak Timur, Kota Jakarta Selatan
               </p>
             </Col>
-            <Col sm={1}>
-              <div className="mail">
-                <Link>
-                  <Icon.Envelope />
-                </Link>
-              </div>
-              <div className="twitter">
-                <Link>
-                  <Icon.Twitter />
-                </Link>
-              </div>
-              <div className="no">
-                <Link>
-                  <Icon.Whatsapp />
-                </Link>
-              </div>
-            </Col>
+            
           </Row>
         </Container>
       </Navbar>

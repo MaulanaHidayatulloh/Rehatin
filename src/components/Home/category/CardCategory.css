@@ -5,29 +5,27 @@
     padding: 3rem;
     
 }
-.kategori h4{
+.kategori h2{
     text-align: center;
-    padding: 2rem;
+    margin-bottom: 5rem;
 }
 .kategori .img {
     height: 15rem ;
     width: 100%;
     justify-content: center;
-    transform: translateY(-40%);
 }
 
 .kategori div.col {
     padding: 1rem;
+    gap: 2rem;
 }
 
 .card {
     width: 15rem;
-    position: absolute;
+    height: 15rem;
     border: none;
-}
-
-.card-kategori {
-    height: fit-content;
+    position: relative;
+    cursor: pointer;
 }
 
 .card-text {
@@ -48,5 +46,6 @@
 }
 
 .sec-card {
-    padding: 0 5rem;
+    padding: 0.5rem;
 }
+

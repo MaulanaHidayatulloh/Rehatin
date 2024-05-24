@@ -6,6 +6,7 @@ import Cover from "../components/Home/cover-atas/cover";
 import City from "../components/Home/city/city";
 import Event from "../components/Home/event/event";
 import Recommendation from "../components/Home/recommendation/recommendation";
+import Note from "../components/Home/note/note";
 
 const HomePage = () => {
   return (
