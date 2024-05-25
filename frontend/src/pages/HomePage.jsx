@@ -18,6 +18,7 @@ const HomePage = () => {
       <Recommendation />
       <Event />
       <CardCategory />
+      <Note />
       <Footer />
     </div>
   );
