@@ -5,34 +5,27 @@
   padding: 3rem;
   padding-bottom: 6rem;
 }
-
-.kategori h4 {
-  text-align: center;
-  padding: 2rem;
-  padding-bottom: 3rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-  font-size: 2rem;
+.kategori h2{
+    text-align: center;
+    margin-bottom: 5rem;
 }
-
-.card-kategori .img {
-  height: 18rem;
-  width: 100%;
+.kategori .img {
+    height: 15rem ;
+    width: 100%;
+    justify-content: center;
 }
 
 .kategori div.col {
-  padding: 1rem;
+    padding: 1rem;
+    gap: 2rem;
 }
 
-.card-kategori .card {
-  width: 18rem;
-  border: none;
-  padding: 0;
-}
-
-.card-kategori {
-  height: fit-content;
-  display: flex;
-  flex-wrap: wrap;
+.card {
+    width: 15rem;
+    height: 15rem;
+    border: none;
+    position: relative;
+    cursor: pointer;
 }
 
 .card-text {
@@ -50,6 +43,7 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.kategori .sec-card {
-  padding: 0;
+.sec-card {
+    padding: 0.5rem;
 }
+

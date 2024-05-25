@@ -4,12 +4,14 @@
   height: 100%;
   padding-top: 2rem;
   color: var(--color-text);
-  background-color: var(--color-section);
+  background-color: var(--color-Fifth);
 }
-.sec-footer {
+
+.footer-page .sec-footer {
   height: 100%;
   padding: 3rem;
   text-align: justify;
+  font-size: 15px;
 }
 
 .sec-footer div.col {
@@ -20,6 +22,16 @@
 
 .sec-footer h5 {
   font-weight: 600;
+  color: var(--color-bg);
+  font-size: 18px;
+}
+
+.sec-footer h5 img{
+  width: 15rem;
+}
+
+.sec-footer p {
+  color: var(--color-bg);
 }
 
 .sec-footer ul {
@@ -29,34 +41,43 @@
 .sec-footer ul li {
   list-style: none;
   padding: 0;
-  margin-left: 0;
+  margin-bottom: 5px;
 }
 
 .sec-footer ul li a {
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-bg);
 }
 
-.sec-footer .mail,
-.sec-footer .twitter,
-.sec-footer .no {
-  margin-bottom: 10px;
-  text-align: center;
+.sec-footer .tiktok,
+.sec-footer .youtube,
+.sec-footer .ig {
+  margin-bottom: 5px;
 }
 
-.sec-footer .mail a,
-.sec-footer .twitter a,
-.sec-footer .no a {
-  color: var(--color-text);
+.sec-footer .icon-follow a{
+  color: #CDCDCD;
 }
-.sec-footer .mail a:hover,
-.sec-footer .twitter a:hover,
-.sec-footer .no a:hover {
-  color: var(--color-hover);
+
+.sec-footer .icon-follow a:hover {
+  color: var(--color-bg);
+}
+
+.sec-footer .tiktok a,
+.sec-footer .youtube a,
+.sec-footer .ig a {
+  color: #CDCDCD;
+  text-decoration: none;
+}
+.sec-footer .tiktok a:hover,
+.sec-footer .youtube a:hover,
+.sec-footer .ig a:hover {
+  color: var(--color-bg);
 }
 
 .copyright {
   background-color: var(--color-Fifth);
+  border-top: 1px solid var(--color-bg);
 }
 
 .copyright-text {

@@ -8,11 +8,11 @@ import React from "react";
 function CardCategory() {
   return (
     <div className="kategori">
-      <h4 className="fw-bold">Choose your Favorite Cathegories!</h4>
+      <h2 className="fw-bold">Choose your Favorite Cathegories!</h2>
       <Container className="sec-card">
-        <Row>
-          <Col xs={3} className="card-kategori">
-            <Card className="card park text-white">
+        <Row xs={1} sm={2} md={2} lg={4} className="g-4"> 
+          <Col className="card-kategori">
+            <Card className="park text-white p-0">
               <Card.Img
                 className="img img-kategori img-park"
                 src="src\assets\Home\Category\Gambar katagori\0-park.jpg"
@@ -23,8 +23,8 @@ function CardCategory() {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col sm={3} className="card-kategori">
-            <Card className="card museum text-white">
+          <Col className="card-kategori">
+            <Card className="card museum text-white p-0">
               <Card.Img
                 className="img img-kategori img-museum"
                 src="src\assets\Home\Category\Gambar katagori\0-museum.webp"
@@ -35,8 +35,8 @@ function CardCategory() {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col sm={3} className="card-kategori">
-            <Card className="card eatry text-white">
+          <Col className="card-kategori">
+            <Card className="card eatry text-white p-0">
               <Card.Img
                 className="img img-kategori img-eatry"
                 src="src\assets\Home\Category\Gambar katagori\0-eatery.jpg"
@@ -47,8 +47,8 @@ function CardCategory() {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col sm={3} className="card-kategori">
-            <Card className="card playground text-white">
+          <Col className="card-kategori">
+            <Card className="card playground text-white p-0">
               <Card.Img
                 className="img img-kategori img-playground"
                 src="src/assets/Home/Category/Gambar katagori/0-wahana.jpg"
