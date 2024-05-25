@@ -43,7 +43,7 @@ function CardCategory() {
                 alt="Card image"
               />
               <Card.ImgOverlay className="fw-bold text-wrap">
-                <Card.Text className="card-text ">Eatry</Card.Text>
+                <Card.Text className="card-text ">Eatery</Card.Text>
               </Card.ImgOverlay>
             </Card>
           </Col>

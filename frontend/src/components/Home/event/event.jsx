@@ -37,7 +37,7 @@ const Event = () => {
         ltr={true}
       >
         <div className="card-event" id="elite">
-          <a href="#" className="link">
+          <a href="/" className="link">
             <h3>The Elite Showcase</h3>
           </a>
         </div>
