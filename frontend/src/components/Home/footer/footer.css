@@ -56,23 +56,11 @@
 }
 
 .sec-footer .icon-follow a{
-  color: #CDCDCD;
+  color: var(--color-bg);
 }
 
 .sec-footer .icon-follow a:hover {
-  color: var(--color-bg);
-}
-
-.sec-footer .tiktok a,
-.sec-footer .youtube a,
-.sec-footer .ig a {
   color: #CDCDCD;
-  text-decoration: none;
-}
-.sec-footer .tiktok a:hover,
-.sec-footer .youtube a:hover,
-.sec-footer .ig a:hover {
-  color: var(--color-bg);
 }
 
 .copyright {
