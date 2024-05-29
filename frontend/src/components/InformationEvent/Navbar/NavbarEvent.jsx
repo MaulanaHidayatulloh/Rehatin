@@ -8,7 +8,7 @@ function Navbar() {
         <img src="../public/logo/logo_rehatin.png" alt="" />
       </a>
       <nav className={styles.navbar}>
-        <a href="/" className={`${styles.nav} ${styles.homeNav}`}>
+        <a href="/" className={`${styles.nav} ${styles.navnav}`}>
           Home
         </a>
         <a href="/aboutUs" className={`${styles.nav} ${styles.navnav}`}>
