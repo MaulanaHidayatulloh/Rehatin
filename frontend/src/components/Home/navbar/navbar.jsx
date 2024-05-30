@@ -1,37 +1,81 @@
 import React from "react";
-import styles from "./Navbar.module.css";
+import "./Navbar.module.css";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link, NavLink } from "react-router-dom";
+import Login from "../../formlogin/formlogin";
 
-function Navbar() {
+function NavbarCom() {
   return (
-    <header className={styles.header}>
-      <a href="#" className={styles.navbarLogo}>
-        <img src="../public/logo/Rehatin-removebg-preview 1.svg" alt="" />
-      </a>
-      <nav className={styles.navbar}>
-        <a href="#" className={`${styles.nav} ${styles.homeNav}`}>
-          Home
-        </a>
-        <a href="#" className={styles.nav}>
-          About Us
-        </a>
-        <a href="#" className={styles.nav}>
-          Wishlist
-        </a>
-        <a href="#" className={styles.nav}>
-          Gallery
-        </a>
-        <a href="#" className={styles.nav}>
-          Blog
-        </a>
-        <a href="#" className={`${styles.extra} ${styles.login}`}>
-          Log in
-        </a>
-        <a href="#" className={styles.extra}>
-          Register
-        </a>
-      </nav>
-    </header>
+    <Navbar expand="lg" className="fixed-top">
+      <Container>
+        <Navbar.Brand href="/">
+          <img
+            src="public\logo\logo-rehatin-w.png"
+            width="120"
+            className="d-inline-block align-top"
+            alt="Rehatin logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" className="text-white" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="ms-auto my-2 my-lg-0 mx-2"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <ul className="d-flex pt-3 list-unstyled ">
+              <li className="me-4 ">
+                <NavLink
+                  to={"/"}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="me-4">
+                <NavLink
+                  to={"/aboutUs"}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  About Us
+                </NavLink>
+              </li>
+              <li className="me-4">
+                <NavLink
+                  to={"/wishlist"}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  Wishlist
+                </NavLink>
+              </li>
+              <li className="me-4">
+                <NavLink
+                  to={"/blog"}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  Blog
+                </NavLink>
+              </li>
+            </ul>
+          </Nav>
+          <div>
+            <Login/>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default NavbarCom;

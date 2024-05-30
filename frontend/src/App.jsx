@@ -6,6 +6,8 @@ import AboutPage from "./pages/AboutPages";
 import WishlistPage from "./pages/WishlistPage";
 import GalleryPage from "./pages/GalleryPages";
 import BlogPage from "./pages/BlogPage";
+import Login from "./components/formlogin/formlogin";
+import Register from "./components/formregister/formregister";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
     </div>
