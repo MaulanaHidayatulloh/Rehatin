@@ -37,32 +37,32 @@ const Event = () => {
         ltr={true}
       >
         <div className="card-event" id="elite">
-          <a href="/" className="link">
+          <a href="/TheEliteShowcase" className="link">
             <h3>The Elite Showcase</h3>
           </a>
         </div>
         <div className="card-event" id="pesta">
-          <a href="#" className="link">
+          <a href="/PestaBebasBerselancar" className="link">
             <h3>Pesta Bebas Berselancar</h3>
           </a>
         </div>
         <div className="card-event" id="waku">
-          <a href="#" className="link">
+          <a href="/WakuWakuFestival" className="link">
             <h3>Waku - Waku Festival</h3>
           </a>
         </div>
         <div className="card-event" id="prj">
-          <a href="#" className="link">
+          <a href="/PekanRayaJakarta" className="link">
             <h3>Pekan Raya Jakarta</h3>
           </a>
         </div>
         <div className="card-event" id="sound">
-          <a href="#" className="link">
+          <a href="/TheSoundsProject" className="link">
             <h3>The Sounds Project</h3>
           </a>
         </div>
         <div className="card-event" id="jdm">
-          <a href="#" className="link">
+          <a href="/JDMFestBandung" className="link">
             <h3>JDM Fest Bandung</h3>
           </a>
         </div>

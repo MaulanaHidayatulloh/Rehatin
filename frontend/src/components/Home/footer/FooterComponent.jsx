@@ -13,7 +13,9 @@ function Footer() {
         <Container>
           <Row className="gap-3">
             <Col sm={4}>
-              <h5><img src="public\logo\logo-rehatin-w.png" /></h5>
+              <h5>
+                <img src="public\logo\logo-rehatin-w.png" />
+              </h5>
               <p className="text-align-justify me-5">
                 "Temukan kebahagiaan di setiap sudut kota! Nikmati rekomendasi
                 tempat hiburan terbaik untuk pengalaman tak terlupakan. "
@@ -52,16 +54,22 @@ function Footer() {
             </Col>
 
             <Col sm={2}>
-            <h5>Follow Us On</h5>
-            <ul >
+              <h5>Follow Us On</h5>
+              <ul>
                 <li className="icon-follow">
-                  <a href=""><Icon.Tiktok/> Tiktok</a>
+                  <a href="">
+                    <Icon.Tiktok /> Tiktok
+                  </a>
                 </li>
                 <li className="icon-follow">
-                  <a href=""><Icon.Youtube/> Youtube</a>
+                  <a href="">
+                    <Icon.Youtube /> Youtube
+                  </a>
                 </li>
                 <li className="icon-follow">
-                  <a href=""><Icon.Instagram/> Instagram</a>
+                  <a href="">
+                    <Icon.Instagram /> Instagram
+                  </a>
                 </li>
               </ul>
             </Col>
@@ -72,7 +80,6 @@ function Footer() {
                 JL TB Simatupang Kav 1-S, Cilandak Timur, Kota Jakarta Selatan
               </p>
             </Col>
-            
           </Row>
         </Container>
       </Navbar>

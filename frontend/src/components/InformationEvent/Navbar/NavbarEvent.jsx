@@ -1,20 +1,14 @@
 import React from "react";
-import "./Navbar.module.css";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { Link, NavLink } from "react-router-dom";
-import Login from "../../formlogin/formlogin";
+import styles from "./Navbar.module.css";
 
-function NavbarCom() {
+function Navbar() {
   return (
     <header className={styles.header}>
       <a href="/" className={styles.navbarLogo}>
         <img src="../public/logo/logo_rehatin.png" alt="" />
       </a>
       <nav className={styles.navbar}>
-        <a href="/" className={`${styles.nav} ${styles.homeNav}`}>
+        <a href="/" className={`${styles.nav} ${styles.navnav}`}>
           Home
         </a>
         <a href="/aboutUs" className={`${styles.nav} ${styles.navnav}`}>
@@ -34,4 +28,4 @@ function NavbarCom() {
   );
 }
 
-export default NavbarCom;
+export default Navbar;

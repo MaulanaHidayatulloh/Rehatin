@@ -7,24 +7,27 @@
     url(../src/assets/Home/jakarta.png);
   background-size: 100%;
   background-repeat: no-repeat;
+  padding: 8rem 0;
 }
 
 .cover-top {
   align-items: center;
   line-height: 1.2;
-  padding: 5rem 0;
+  padding-top: 9rem;
+  padding-bottom: 3rem;
 }
 
 .cover-top h1 {
   font-weight: 600;
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: var(--color-bg);
   letter-spacing: 0.15em;
+  padding-bottom: 1.5rem;
 }
 
 .cover-top h3 {
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   color: var(--color-bg);
   letter-spacing: 0.15em;
 }
@@ -33,7 +36,7 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   width: 1000px;
   margin: 0 auto;
   margin-bottom: 6rem;
@@ -47,7 +50,7 @@
   outline: none;
   flex: 1;
   border-radius: 10px;
-  padding: 8px;
+  padding: 10px;
   padding-left: 30px;
 }
 

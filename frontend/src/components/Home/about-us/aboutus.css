@@ -22,9 +22,8 @@
 .home-content h1 {
   font-weight: 600;
   line-height: 1.05;
-  font-size: 3rem;
+  font-size: 2.8rem;
   padding-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .home-content h2 {
@@ -32,19 +31,27 @@
   padding-bottom: 1rem;
   font-size: 2.5rem;
   color: var(--color-Fifth);
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .home-content p {
   padding-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  text-align: justify;
 }
 
 .home-content button {
   border: none;
   outline: none;
   background-color: var(--color-Fifth);
-  border-radius: 100px;
-  padding: 10px 60px;
+  border-radius: 10px;
+  padding: 10px 50px;
   color: var(--color-bg);
+  border: 1px solid transparent;
+}
+
+.home-content button:hover {
+  border: 1px solid var(--color-Fifth);
+  color: var(--color-Fifth);
+  background-color: var(--color-bg);
 }

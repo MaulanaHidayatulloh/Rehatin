@@ -6,11 +6,16 @@
 }
 
 .recommendation-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-left: 0.7rem;
+  gap: 1.5rem;
+}
+
+.recommendation-title h2 {
   font-weight: bold;
   font-size: 2rem;
-  text-align: center;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .recommendation-tabs {
@@ -24,9 +29,13 @@
   margin: 0 10px;
   background-color: transparent;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+.recommendation-tab:hover {
+  color: var(--color-Fifth);
 }
 
 .recommendation-tab.active {
@@ -36,12 +45,14 @@
 
 .recommendation-list {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  padding-bottom: 40px;
   gap: 50px;
 }
 
 .recommendation-card {
+  flex: 0 0 auto;
+  width: 230px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: var(--color-bg);
@@ -66,7 +77,15 @@
 }
 
 .recommendation-card-caption p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--color-Fifth);
   letter-spacing: 0.2em;
+}
+
+.star-full {
+  margin: 0 0.2rem;
+}
+
+.star-half {
+  margin: 0 0.2rem;
 }

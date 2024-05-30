@@ -1,37 +1,50 @@
 import React, { useState } from "react";
 import "./recommendation.css";
+import { StarHalf, StarFill } from "react-bootstrap-icons";
 
 const cityRecommendations = {
   Jakarta: [
     {
       imgSrc: "../src/assets/Home/recommended/HappyHouse.png",
       title: "Happy House",
-      rating: 5,
-      url: "/aboutUs",
+      rating: 4.5,
+      url: "/places/1",
+    },
+    {
+      imgSrc: "../src/assets/Home/recommended/HappyHouse.png",
+      title: "Happy House",
+      rating: 4.5,
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/Tanamera.png",
       title: "Tanamera Coffee",
       rating: 5,
-      url: "https://www.google.com/maps/place/Tanamera+Coffee",
+      url: "#",
+    },
+    {
+      imgSrc: "../src/assets/Home/recommended/Tanamera.png",
+      title: "Tanamera Coffee",
+      rating: 3.5,
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/Djournal.png",
       title: "D'journal House",
-      rating: 5,
-      url: "https://www.google.com/maps/place/Djournal+House",
+      rating: 3.5,
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/ombe.png",
       title: "Ombe Coffee",
       rating: 5,
-      url: "https://www.google.com/maps/place/Ombe+Coffee",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/common.png",
       title: "Common Grounds",
       rating: 5,
-      url: "https://www.google.com/maps/place/Common+Grounds",
+      url: "#",
     },
   ],
   Bogor: [
@@ -39,19 +52,19 @@ const cityRecommendations = {
       imgSrc: "../src/assets/Home/recommended/BogorCafe1.png",
       title: "Bogor Cafe 1",
       rating: 4,
-      url: "https://www.google.com/maps/place/Bogor+Cafe+1",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BogorCafe2.png",
       title: "Bogor Cafe 2",
       rating: 5,
-      url: "https://www.google.com/maps/place/Bogor+Cafe+2",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BogorCafe3.png",
       title: "Bogor Cafe 3",
       rating: 4,
-      url: "https://www.google.com/maps/place/Bogor+Cafe+3",
+      url: "#",
     },
   ],
   Depok: [
@@ -59,19 +72,19 @@ const cityRecommendations = {
       imgSrc: "../src/assets/Home/recommended/DepokCafe1.png",
       title: "Depok Cafe 1",
       rating: 5,
-      url: "https://www.google.com/maps/place/Depok+Cafe+1",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/DepokCafe2.png",
       title: "Depok Cafe 2",
       rating: 3,
-      url: "https://www.google.com/maps/place/Depok+Cafe+2",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/DepokCafe3.png",
       title: "Depok Cafe 3",
       rating: 4,
-      url: "https://www.google.com/maps/place/Depok+Cafe+3",
+      url: "#",
     },
   ],
   Tangerang: [
@@ -79,13 +92,13 @@ const cityRecommendations = {
       imgSrc: "../src/assets/Home/recommended/TangerangCafe1.png",
       title: "Tangerang Cafe 1",
       rating: 4,
-      url: "https://www.google.com/maps/place/Tangerang+Cafe+1",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/TangerangCafe2.png",
       title: "Tangerang Cafe 2",
       rating: 5,
-      url: "https://www.google.com/maps/place/Tangerang+Cafe+2",
+      url: "#",
     },
   ],
   Bekasi: [
@@ -93,13 +106,13 @@ const cityRecommendations = {
       imgSrc: "../src/assets/Home/recommended/BekasiCafe1.png",
       title: "Bekasi Cafe 1",
       rating: 4,
-      url: "https://www.google.com/maps/place/Bekasi+Cafe+1",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BekasiCafe2.png",
       title: "Bekasi Cafe 2",
       rating: 5,
-      url: "https://www.google.com/maps/place/Bekasi+Cafe+2",
+      url: "#",
     },
   ],
   Bandung: [
@@ -107,19 +120,19 @@ const cityRecommendations = {
       imgSrc: "../src/assets/Home/recommended/BandungCafe1.png",
       title: "Bandung Cafe 1",
       rating: 5,
-      url: "https://www.google.com/maps/place/Bandung+Cafe+1",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BandungCafe2.png",
       title: "Bandung Cafe 2",
       rating: 4,
-      url: "https://www.google.com/maps/place/Bandung+Cafe+2",
+      url: "#",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BandungCafe3.png",
       title: "Bandung Cafe 3",
       rating: 5,
-      url: "https://www.google.com/maps/place/Bandung+Cafe+3",
+      url: "#",
     },
   ],
 };
@@ -133,7 +146,10 @@ const Recommendation = () => {
 
   return (
     <div className="recommendation-section">
-      <h2 className="recommendation-title">Special recommended for you</h2>
+      <div className="recommendation-title">
+        <img src="../src/assets/Home/recommended/mdi_favorite.svg" alt="" />
+        <h2>Special recommended for you</h2>
+      </div>
       <div className="recommendation-tabs">
         {Object.keys(cityRecommendations).map((city) => (
           <button
@@ -158,7 +174,14 @@ const Recommendation = () => {
             <img src={rec.imgSrc} alt={rec.title} />
             <div className="recommendation-card-caption">
               <h3>{rec.title}</h3>
-              <p>{"★".repeat(rec.rating)}</p>
+              <p>
+                {Array.from({ length: Math.floor(rec.rating) }, (_, i) => (
+                  <StarFill key={i} size={17} className="star-full" />
+                ))}
+                {rec.rating % 1 !== 0 && (
+                  <StarHalf size={17} className="star-half" />
+                )}
+              </p>
             </div>
           </div>
         ))}
