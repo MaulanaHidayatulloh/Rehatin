@@ -1,9 +1,11 @@
 const express = require("express");
-const app = express();
-import cors from 'cors'
-const PORT = 8000;
+const session = require("express-session");
+const KnexSessionStore = require("connect-session-knex")(session);
+const knex = require("knex")(require("./knexfile"));
+const { PORT } = require("./config/appConfig");
 
-app.use(cors())
+const app = express();
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +15,26 @@ const cors = require("cors");
 app.use(
   cors({
     origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
+
+// Session store configuration
+const store = new KnexSessionStore({
+  knex,
+  tablename: "sessions", // Nama tabel untuk menyimpan sesi
+});
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "aVeryComplexAndRandomStringHere",
+    resave: false,
+    saveUninitialized: false,
+    store,
+    cookie: {
+      maxAge: 1000 * 60 * 60, // Sesi kadaluarsa setelah 1 jam
+      secure: false, // Set ke true jika menggunakan HTTPS
+    },
   })
 );
 
@@ -20,11 +42,15 @@ app.use(
 const jakartaRoutes = require("./routes/jakarta");
 const bogorRoutes = require("./routes/bogor");
 const SemuaTempat = require("./routes/SemuaTempat");
+const authRoutes = require("./auth");
+const profileRoutes = require("./routes/profile");
 
 // Mount the routes on specific paths
 app.use("/jakarta", jakartaRoutes);
 app.use("/bogor", bogorRoutes);
 app.use("/place", SemuaTempat);
+app.use("/auth", authRoutes);
+app.use("/profile", profileRoutes);
 
 // Function to handle errors
 function handleError(err, res) {
@@ -32,9 +58,12 @@ function handleError(err, res) {
   res.status(500).json({ error: "Terjadi kesalahan pada server" });
 }
 
-// Error handling middleware (optional)
+// Error handling middleware
 app.use((err, req, res, next) => {
-  handleError(err, res);
+  console.error("Error:", err);
+  res
+    .status(err.status || 500)
+    .json({ error: err.message || "Terjadi kesalahan pada server" });
 });
 
-app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

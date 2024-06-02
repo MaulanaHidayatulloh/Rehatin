@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const database = require("../model/database");
+const authMiddleware = require("../middleware/authMiddleware");
 
 function handleError(err, res) {
   console.error("Error:", err);
@@ -12,44 +13,6 @@ function encodeImageToBase64(imageData) {
   return Buffer.from(imageData).toString("base64");
 }
 
-// Route handler
-router.get("/", async (req, res) => {
-  try {
-    const [results] = await database.query(`
-      SELECT 
-        th.id_tempat, 
-        th.nama_tempat, 
-        th.kategori_lokasi, 
-        th.lokasi, 
-        th.harga, 
-        th.deskripsi, 
-        th.gambar,
-        AVG(up.rating) as average_rating
-      FROM 
-        tempat_hangout th 
-      JOIN 
-        ulasan_pengguna up 
-      ON 
-        th.id_tempat = up.tempat_id
-    `);
-
-    const places = results.map((place) => {
-      // Mengencode gambar longblob ke base64
-      const imageDataBase64 = encodeImageToBase64(place.gambar);
-      return {
-        ...place,
-        gambarBase64: imageDataBase64,
-        average_rating: parseFloat(place.average_rating).toFixed(1),
-      };
-    });
-
-    res.json(places);
-  } catch (err) {
-    handleError(err, res);
-  }
-});
-
-// Route handler for GET /place/:id
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -70,7 +33,7 @@ router.get("/:id", async (req, res) => {
     const [reviewResults] = await database.query(
       `
       SELECT 
-        up.rating, up.ulasan, u.first_name, u.last_name 
+        up.rating, up.ulasan, u.first_name, u.last_name, u.foto 
       FROM 
         ulasan_pengguna up 
       JOIN 
@@ -89,22 +52,66 @@ router.get("/:id", async (req, res) => {
 
     const place = placeResults[0];
     place.gambarBase64 = Buffer.from(place.gambar).toString("base64");
-    place.reviews = reviewResults; // Attach reviews to the place object
+
+    // Convert user photos to base64 and attach to review objects
+    const reviewsWithBase64Photos = reviewResults.map((review) => {
+      if (review.foto) {
+        return {
+          ...review,
+          foto: Buffer.from(review.foto).toString("base64"),
+        };
+      } else {
+        return review;
+      }
+    });
+
+    place.reviews = reviewsWithBase64Photos; // Attach reviews to the place object
 
     // Calculate average rating
-    const totalRating = reviewResults.reduce(
+    const totalRating = reviewsWithBase64Photos.reduce(
       (sum, review) => sum + parseFloat(review.rating),
       0
     );
     const averageRating =
-      reviewResults.length > 0 ? totalRating / reviewResults.length : 0;
+      reviewsWithBase64Photos.length > 0
+        ? totalRating / reviewsWithBase64Photos.length
+        : 0;
     place.averageRating = averageRating; // Attach average rating to the place object
 
     console.log("Place Data with Average Rating:", place);
 
     res.json(place);
   } catch (err) {
-    handleError(err, res);
+    console.error("Error:", err);
+    res.status(500).json({ error: "Terjadi kesalahan pada server" });
+  }
+});
+
+router.post("/:id/review", authMiddleware, async (req, res) => {
+  const { id } = req.params;
+  const { rating, ulasan } = req.body;
+  const userId = req.session.user.id;
+
+  try {
+    await database.query(
+      "INSERT INTO ulasan_pengguna (tempat_id, id_user, rating, ulasan) VALUES (?, ?, ?, ?);",
+      [id, userId, rating, ulasan]
+    );
+
+    const [newReviewResults] = await database.query(
+      "SELECT up.rating, up.ulasan, u.first_name, u.last_name, u.foto FROM ulasan_pengguna up JOIN user u ON up.id_user = u.id WHERE up.tempat_id = ? AND up.id_user = ?;",
+      [id, userId]
+    );
+
+    const newReview = newReviewResults[0];
+    if (newReview.foto) {
+      newReview.foto = Buffer.from(newReview.foto).toString("base64");
+    }
+
+    res.status(201).json(newReview);
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ error: "Terjadi kesalahan pada server" });
   }
 });
 

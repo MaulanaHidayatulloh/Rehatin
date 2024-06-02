@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { StarHalf, StarFill } from "react-bootstrap-icons";
+import { StarHalf, StarFill, HeartFill } from "react-bootstrap-icons";
 import { GeoAltFill } from "react-bootstrap-icons";
 import "./place.css";
 import FilterComponent from "./FilterComponent";
@@ -10,8 +10,13 @@ const Jakarta = () => {
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRating, setSelectedRating] = useState(null);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
+    // Load wishlist from localStorage
+    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    setWishlist(savedWishlist);
+
     axios
       .get("http://localhost:8000/jakarta")
       .then((response) => {
@@ -51,6 +56,19 @@ const Jakarta = () => {
     setSelectedRating(rating);
   };
 
+  const handleLoveClick = (place) => {
+    let updatedWishlist = [];
+    if (wishlist.some((item) => item.id_tempat === place.id_tempat)) {
+      updatedWishlist = wishlist.filter(
+        (item) => item.id_tempat !== place.id_tempat
+      );
+    } else {
+      updatedWishlist = [...wishlist, place];
+    }
+    setWishlist(updatedWishlist);
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+  };
+
   return (
     <section className="place">
       <FilterComponent onRatingChange={handleRatingChange} />
@@ -78,10 +96,29 @@ const Jakarta = () => {
             .map((place) => (
               <div className="place-card" key={place.id_tempat}>
                 <Link to={`/places/${place.id_tempat}`} className="link_tempat">
-                  <img
-                    src={`data:image/png;base64,${place.gambarBase64}`}
-                    alt={place.nama_tempat}
-                  />
+                  <div className="place_gambar">
+                    <img
+                      src={`data:image/png;base64,${place.gambarBase64}`}
+                      alt={place.nama_tempat}
+                    />
+                    <div
+                      className="place_love"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLoveClick(place);
+                      }}
+                    >
+                      <HeartFill
+                        className={
+                          wishlist.some(
+                            (item) => item.id_tempat === place.id_tempat
+                          )
+                            ? "love-icon loved"
+                            : "love-icon"
+                        }
+                      />
+                    </div>
+                  </div>
                   <div className="place_keterangan">
                     <h2>{place.nama_tempat}</h2>
                     <div className="place_rating">

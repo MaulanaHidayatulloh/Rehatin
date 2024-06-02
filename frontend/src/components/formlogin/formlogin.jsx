@@ -3,53 +3,77 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Register from "../formregister/formregister";
+import axios from "axios";
 
-function Login() {
+function Login({ show, handleClose, setUser, setIsLoggedIn }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [show, setShow] = useState(false);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/auth/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+      if (response && response.data) {
+        const { user } = response.data;
+        setUser(user);
+        setIsLoggedIn(true);
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("isLoggedIn", true);
+        handleClose();
+      } else {
+        console.error("Login failed: No user data received");
+      }
+    } catch (error) {
+      console.error(
+        "Login failed:",
+        error.response ? error.response.data.error : error.message
+      );
+    }
+  };
 
   return (
-    <>
-      <Button className="py-2 px-4 text-white" variant="" onClick={handleShow}
-      style={{backgroundColor: "#215a68"}}>
-        Login
-      </Button>
-
-      <Modal
-        show={show}
-        onHide={handleClose}
-        // backdrop="static"
-        keyboard={false}
-        centered
-      >
-        <Modal.Header
-          closeButton
-          className="boder border-bottom-0"
-        ></Modal.Header>
-        <Modal.Body>
-          <Modal.Title className="p-3 text-center fw-bold ">
-            Rehatin
-          </Modal.Title>
-          <Form className="p-5">
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              {/* <Form.Label><strong>Email</strong></Form.Label> */}
-              <Form.Control type="email" placeholder="Email" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="">
-              {/* <Form.Label><strong>Password</strong></Form.Label> */}
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Button className="w-100 mt-4 shadow" style={{ backgroundColor: "#468392" }}>
-              Login
-            </Button>
-            <Register/>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
+    <Modal show={show} onHide={handleClose} keyboard={false} centered>
+      <Modal.Header closeButton className="border-bottom-0"></Modal.Header>
+      <Modal.Body>
+        <Modal.Title className="p-3 text-center fw-bold">Rehatin</Modal.Title>
+        <Form className="p-5" onSubmit={handleLogin}>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          <Button
+            type="submit"
+            className="w-100 mt-4 shadow"
+            style={{ backgroundColor: "#468392" }}
+          >
+            Login
+          </Button>
+        </Form>
+        <Register />
+      </Modal.Body>
+    </Modal>
   );
 }
 

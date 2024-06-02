@@ -4,9 +4,11 @@ import axios from "axios";
 import { StarHalf, StarFill } from "react-bootstrap-icons";
 import Spinner from "react-bootstrap/Spinner";
 
-const PlaceDetail = () => {
+const PlaceDetail = ({ user, isLoggedIn }) => {
   const { id } = useParams();
   const [place, setPlace] = useState(null);
+  const [reviewText, setReviewText] = useState("");
+  const [reviewRating, setReviewRating] = useState(0);
 
   useEffect(() => {
     axios
@@ -19,6 +21,37 @@ const PlaceDetail = () => {
         console.error("Error fetching place details:", err);
       });
   }, [id]);
+
+  const handleReviewSubmit = () => {
+    if (!isLoggedIn) {
+      alert("Anda harus login untuk mengirim ulasan.");
+      return;
+    }
+
+    const newReview = {
+      tempat_id: id,
+      rating: reviewRating,
+      ulasan: reviewText,
+      user_id: user.id,
+    };
+
+    axios
+      .post(`http://localhost:8000/place/${id}/review`, newReview, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log("Review submitted:", response.data);
+        setPlace((prevPlace) => ({
+          ...prevPlace,
+          reviews: [...prevPlace.reviews, response.data],
+        }));
+        setReviewText("");
+        setReviewRating(0);
+      })
+      .catch((err) => {
+        console.error("Error submitting review:", err);
+      });
+  };
 
   if (!place) {
     return <Spinner animation="border" variant="dark" />;
@@ -40,7 +73,7 @@ const PlaceDetail = () => {
     return stars;
   };
 
-  const averageRating = place.averageRating ?? 0; // Untuk nilai default jika nilai 0
+  const averageRating = place.averageRating ?? 0;
 
   return (
     <div>
@@ -57,27 +90,74 @@ const PlaceDetail = () => {
       </p>
       <p>Harga: Rp. {place.harga}</p>
       <h3>Ulasan Pengguna</h3>
+
       {place.reviews.length > 0 ? (
-        place.reviews.map((review, index) => (
-          <div key={index} className="review">
-            <p>
-              {review.rating}
-              {Array.from({ length: Math.floor(review.rating) }, (_, i) => (
-                <StarFill key={i} size={17} className="star-full" />
-              ))}
-              {review.rating % 1 !== 0 && (
-                <StarHalf size={17} className="star-half" />
-              )}
-            </p>
-            <p>{review.ulasan}</p>
-            <p>
-              - {review.first_name} {review.last_name}
-            </p>
-          </div>
-        ))
+        place.reviews
+          .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+          .map((review, index) => (
+            <div key={index} className="review">
+              <div>
+                {review.foto ? (
+                  <img
+                    src={`data:image/png;base64,${review.foto}`}
+                    alt="user"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "100%",
+                    }}
+                  />
+                ) : (
+                  <img
+                    src="../public/logo/default.png"
+                    alt="user"
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                )}
+                <p>
+                  {typeof review.rating === "number"
+                    ? review.rating.toFixed(2)
+                    : review.rating}
+                  {Array.from({ length: Math.floor(review.rating) }, (_, i) => (
+                    <StarFill key={i} size={17} className="star-full" />
+                  ))}
+                  {review.rating % 1 !== 0 && (
+                    <StarHalf size={17} className="star-half" />
+                  )}
+                </p>
+              </div>
+              <p>{review.ulasan}</p>
+              <p>
+                - {review.first_name} {review.last_name}
+              </p>
+            </div>
+          ))
       ) : (
         <p>Belum ada ulasan.</p>
       )}
+
+      <div>
+        <h3>Tulis Ulasan</h3>
+        <div>
+          <label>Rating:</label>
+          <input
+            type="number"
+            value={reviewRating}
+            onChange={(e) => setReviewRating(parseFloat(e.target.value))}
+            min="0"
+            max="5"
+            step="0.01"
+          />
+        </div>
+        <div>
+          <label>Ulasan:</label>
+          <textarea
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+          ></textarea>
+        </div>
+        <button onClick={handleReviewSubmit}>Kirim Ulasan</button>
+      </div>
     </div>
   );
 };

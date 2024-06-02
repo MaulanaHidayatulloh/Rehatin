@@ -11,7 +11,7 @@ import Note from "../components/Home/note/note";
 const HomePage = () => {
   return (
     <div>
-      <NavbarCom />
+      {/* <NavbarCom /> */}
       <Cover />
       <AboutUs />
       <City />

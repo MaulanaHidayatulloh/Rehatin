@@ -1,12 +1,5 @@
-import NavbarCom from "../components/Home/navbar/navbar";
-
 const AboutPage = () => {
-    return (
-    <div>
-        AboutPage
-        <NavbarCom/>
-    </div>
-    );
+  return <div>AboutPage</div>;
 };
 
 export default AboutPage;
