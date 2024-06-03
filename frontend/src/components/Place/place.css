@@ -48,12 +48,12 @@
 .place_gambar {
   position: relative;
   width: 400px;
-  height: 250px;
+  height: 268px;
 }
 
 .place_gambar img {
   width: 100%;
-  height: 100%;
+
   object-fit: cover;
   border-radius: 10px;
 }

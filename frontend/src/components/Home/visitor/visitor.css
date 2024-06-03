@@ -1,0 +1,86 @@
+@import "../../../vars.css";
+
+.visitor-section {
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.visitor-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-left: 0.7rem;
+  gap: 1.5rem;
+}
+
+.visitor-title h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.visitor-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 10px;
+  margin: 0 50px;
+  padding-bottom: 40px;
+  gap: 30px;
+}
+
+.visitor-card {
+  flex: 0 0 auto;
+  width: 450px;
+  border-radius: 20px;
+  background-color: var(--color-bg);
+  border: 1px solid #000;
+  position: relative;
+}
+
+.visitorCard_title {
+  height: 12rem;
+  background-color: var(--color-Fifth);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.visitorCard_title p {
+  color: var(--color-bg);
+}
+
+.visitor_profile {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.visitor-card-caption {
+  height: 12rem;
+  padding: 0 30px;
+  padding-top: 5rem;
+}
+
+.visitor-card-caption h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.visitor-card-caption p {
+  font-size: 1rem;
+  margin: 0.7rem;
+}
+
+.star-full {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-Fifth);
+}
+
+.star-half {
+  margin: 0 0.2rem;
+  font-size: 1.5rem;
+  color: var(--color-Fifth);
+}

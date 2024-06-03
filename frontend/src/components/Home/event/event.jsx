@@ -25,7 +25,10 @@ const responsive = {
 const Event = () => {
   return (
     <section className="event">
-      <h2>Event Information</h2>
+      <div className="event-title">
+        <img src="../src/assets/Home/event/event_information.svg" alt="" />
+        <h2>Event Information</h2>
+      </div>
       <Carousel
         responsive={responsive}
         infinite={true}

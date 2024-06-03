@@ -89,6 +89,14 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
         {renderRating(averageRating)}
       </p>
       <p>Harga: Rp. {place.harga}</p>
+
+      <a href={place.link_map}>
+        <img
+          src={`data:image/png;base64,${place.gambarMapBase64}`}
+          alt={place.nama_tempat}
+        />
+      </a>
+
       <h3>Ulasan Pengguna</h3>
 
       {place.reviews.length > 0 ? (

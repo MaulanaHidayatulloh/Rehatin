@@ -20,6 +20,7 @@ import Wishlist from "./components/Place/wishlist";
 import NavbarCom from "./components/Home/navbar/navbar";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
+import PlacesContainer from "./pages/Places/park";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -73,6 +74,11 @@ function App() {
           <Route path="/wishlistaja" element={<Wishlist />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/category/:categoryId" element={<PlacesContainer />} />
+          <Route
+            path="/category/:categoryId/location/:locationId"
+            element={<PlacesContainer />}
+          />
         </Routes>
       </Router>
     </div>

@@ -1,11 +1,11 @@
 @import "../../../vars.css";
 
-.note-section {
+.popular-section {
   padding: 50px;
   padding-bottom: 100px;
 }
 
-.note-title {
+.popular-title {
   display: flex;
   align-items: center;
   margin-bottom: 3rem;
@@ -13,13 +13,13 @@
   gap: 1.5rem;
 }
 
-.note-title h2 {
+.popular-title h2 {
   font-weight: bold;
   font-size: 2rem;
   margin: 0;
 }
 
-.note-list {
+.popular-list {
   display: flex;
   overflow-x: auto;
   padding: 0 10px;
@@ -28,33 +28,67 @@
   gap: 30px;
 }
 
-.note-card {
+.popular-card {
   flex: 0 0 auto;
-  width: 100%;
+  width: 400px;
   border-radius: 20px;
   background-color: var(--color-bg);
   cursor: pointer;
   border: 1px solid #000;
 }
 
-.note-card img {
+.popularCard_title {
+  position: relative;
+}
+
+.popularCard_title p {
+  top: 5%;
+  left: 5%;
+  position: absolute;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.popularCard_title img {
   width: 100%;
   height: auto;
   border-radius: 10px 10px 0 0;
   padding-bottom: 10px;
 }
 
-.note-card-caption {
+.popular-card-caption {
   padding: 10px 30px;
   text-align: left;
 }
 
-.note-card-caption h3 {
+.popular-card-caption h3 {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.note-card-caption p {
-  font-size: 1rem;
+.popular-card-caption p {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.star-full {
+  margin: 0 0.2rem;
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.star-half {
+  margin: 0 0.2rem;
+  font-size: 1.5rem;
+  color: gold;
+}
+
+#popular_harga {
+  font-size: 0.8rem;
   color: var(--color-text);
+}
+
+#popular_visit {
+  font-weight: bold;
 }

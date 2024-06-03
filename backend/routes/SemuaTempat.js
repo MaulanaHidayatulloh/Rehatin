@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
     const [placeResults] = await database.query(
       `
       SELECT 
-        th.id_tempat, th.nama_tempat, th.kategori_lokasi, th.lokasi, th.harga, th.deskripsi, th.gambar 
+        th.id_tempat, th.nama_tempat, th.kategori_lokasi, th.lokasi, th.harga, th.deskripsi, th.gambar, th.gambar_map, th.link_map
       FROM 
         tempat_hangout th
       WHERE 
@@ -52,6 +52,7 @@ router.get("/:id", async (req, res) => {
 
     const place = placeResults[0];
     place.gambarBase64 = Buffer.from(place.gambar).toString("base64");
+    place.gambarMapBase64 = Buffer.from(place.gambar_map).toString("base64");
 
     // Convert user photos to base64 and attach to review objects
     const reviewsWithBase64Photos = reviewResults.map((review) => {

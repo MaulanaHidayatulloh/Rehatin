@@ -46,6 +46,7 @@
 .recommendation-list {
   display: flex;
   overflow-x: auto;
+  padding: 0 10px;
   padding-bottom: 40px;
   gap: 50px;
 }
@@ -78,7 +79,7 @@
 
 .recommendation-card-caption p {
   font-size: 1.5rem;
-  color: var(--color-Fifth);
+  color: gold;
   letter-spacing: 0.2em;
 }
 
@@ -88,4 +89,9 @@
 
 .star-half {
   margin: 0 0.2rem;
+}
+
+#recommendation_harga {
+  font-size: 0.8rem;
+  color: var(--color-text);
 }

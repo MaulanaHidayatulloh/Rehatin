@@ -37,17 +37,17 @@
   padding: 0 0.4rem;
 }
 
-.navnav::after {
+.nav::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 0.18rem solid var(--color-bg);
+  border-bottom: 1.5px solid var(--color-bg);
   transform: scaleX(0);
   transition: 0.1s linear;
 }
 
-.navnav:hover::after {
-  transform: scaleX(1);
+.nav:hover::after {
+  transform: scaleX(1.17);
 }
 
 .login {
@@ -62,7 +62,6 @@
 
 .active {
   border-bottom: 0.18rem solid var(--color-bg);
-  padding-bottom: 0.5rem;
 }
 
 .login:hover {

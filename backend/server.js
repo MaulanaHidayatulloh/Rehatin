@@ -43,14 +43,14 @@ const jakartaRoutes = require("./routes/jakarta");
 const bogorRoutes = require("./routes/bogor");
 const SemuaTempat = require("./routes/SemuaTempat");
 const authRoutes = require("./auth");
-const profileRoutes = require("./routes/profile");
+const parkRoutes = require("./routes/park");
 
 // Mount the routes on specific paths
 app.use("/jakarta", jakartaRoutes);
 app.use("/bogor", bogorRoutes);
 app.use("/place", SemuaTempat);
 app.use("/auth", authRoutes);
-app.use("/profile", profileRoutes);
+app.use("/park", parkRoutes);
 
 // Function to handle errors
 function handleError(err, res) {
