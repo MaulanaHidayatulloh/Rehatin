@@ -67,7 +67,7 @@ function NavbarCom({ onLogout }) {
 
   return (
     <header className={styles.header}>
-      <a href="/" className={styles.navbarLogo}>
+      <a className={styles.navbarLogo}>
         <img src="../public/logo/logo_rehatin.png" alt="logo" />
       </a>
       <nav className={styles.navbar}>
@@ -116,6 +116,7 @@ function NavbarCom({ onLogout }) {
                   backgroundColor: "transparent",
                   border: "transparent",
                 }}
+                className="profile_dropdown"
               >
                 {userState && userState.foto ? (
                   <img
@@ -126,6 +127,7 @@ function NavbarCom({ onLogout }) {
                       width: "50px",
                       height: "50px",
                       borderRadius: "100%",
+                      border: "1px solid #000",
                     }}
                   />
                 ) : (
@@ -133,17 +135,41 @@ function NavbarCom({ onLogout }) {
                     src="../public/logo/default.png"
                     alt="user"
                     className={styles.userPhoto}
-                    style={{ width: "50px", height: "50px" }}
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "100%",
+                      border: "1px solid #000",
+                    }}
                   />
                 )}
-                <span>{userState?.first_name}</span>
+                <span
+                  style={{
+                    fontSize: "1.1rem",
+                    paddingLeft: "1rem",
+                    paddingRight: "0.2rem",
+                  }}
+                >
+                  {userState?.first_name}
+                </span>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="/profile">Edit Profile</Dropdown.Item>
-                <Dropdown.Item href="/edit-profile">Edit Profil</Dropdown.Item>
-                <Dropdown.Item>
+                <Dropdown.Item href="/profile" style={{ fontWeight: "bold" }}>
+                  <img
+                    src="../public/profile-icon.svg"
+                    alt="profile"
+                    style={{ paddingRight: "1rem" }}
+                  />
+                  Edit Profile
+                </Dropdown.Item>
+                <Dropdown.Item style={{ padding: "0" }}>
                   <button className={styles.logout} onClick={handleUserLogout}>
+                    <img
+                      src="../public/logout-icon.svg"
+                      alt="profile"
+                      style={{ paddingRight: "1rem" }}
+                    />
                     Log Out
                   </button>
                 </Dropdown.Item>

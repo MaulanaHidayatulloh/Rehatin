@@ -71,10 +71,10 @@ const Visitor = () => {
               <p>{rec.lokasi}</p>
               <p>
                 {Array.from({ length: Math.floor(rec.rating) }, (_, i) => (
-                  <StarFill key={i} size={17} className="star-full" />
+                  <StarFill key={i} size={17} className="star-full_visitor" />
                 ))}
                 {rec.rating % 1 !== 0 && (
-                  <StarHalf size={17} className="star-half" />
+                  <StarHalf size={17} className="star-half_visitor" />
                 )}
               </p>
             </div>

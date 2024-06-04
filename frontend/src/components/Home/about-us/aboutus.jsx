@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./aboutus.css";
 
 function AboutUs() {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate("/aboutUs");
+  };
+
   return (
     <section className="home">
       <div className="home-img">
@@ -18,7 +25,7 @@ function AboutUs() {
           Rehatin helps you plan the perfect adventure and deliver an
           unforgettable holiday experience.
         </p>
-        <button>Learn More</button>
+        <button onClick={handleLearnMore}>Learn More</button>
       </div>
     </section>
   );

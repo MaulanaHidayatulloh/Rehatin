@@ -6,7 +6,7 @@ import {
   StarFill,
   GeoAltFill,
 } from "react-bootstrap-icons";
-import "./wishlist.css"; // Make sure to create and style this CSS file
+import "./wishlist.css";
 
 const Wishlist = () => {
   const [wishlist, setWishlist] = useState([]);

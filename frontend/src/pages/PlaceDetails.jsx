@@ -103,25 +103,51 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
         place.reviews
           .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
           .map((review, index) => (
-            <div key={index} className="review">
-              <div>
-                {review.foto ? (
-                  <img
-                    src={`data:image/png;base64,${review.foto}`}
-                    alt="user"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      borderRadius: "100%",
-                    }}
-                  />
-                ) : (
-                  <img
-                    src="../public/logo/default.png"
-                    alt="user"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                )}
+            <div
+              key={index}
+              className="review"
+              style={{ padding: " 1rem 20rem" }}
+            >
+              <div
+                style={{
+                  border: "1px solid #000",
+                  padding: "2rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "10px",
+                  }}
+                >
+                  {review.foto ? (
+                    <img
+                      src={`data:image/png;base64,${review.foto}`}
+                      alt="user"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "100%",
+                        border: "1px solid #000",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src="../public/logo/default.png"
+                      alt="user"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "100%",
+                        border: "1px solid #000",
+                      }}
+                    />
+                  )}
+                  <p style={{ paddingTop: "0.8rem" }}>
+                    {review.first_name} {review.last_name}
+                  </p>
+                </div>
                 <p>
                   {typeof review.rating === "number"
                     ? review.rating.toFixed(2)
@@ -133,11 +159,8 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
                     <StarHalf size={17} className="star-half" />
                   )}
                 </p>
+                <p>{review.ulasan}</p>
               </div>
-              <p>{review.ulasan}</p>
-              <p>
-                - {review.first_name} {review.last_name}
-              </p>
             </div>
           ))
       ) : (

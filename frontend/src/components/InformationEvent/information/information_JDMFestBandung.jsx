@@ -8,22 +8,23 @@ function Information() {
       <div className="event-card">
         <div className="event-details">
           <img
-            src="../src/assets/EventInformation/JDMFestBandung.png"
+            src="../src/assets/EventInformation/jdmbandung.png"
             alt="Event"
             className="event-image"
           />
           <h2>JDM Fest Bandung</h2>
           <p>
-            <CalendarEvent className="calendarEvent" /> 25 - 26 May 2024
+            <CalendarEvent className="calendarEvent" /> 11 Mei 2024
           </p>
           <p>
-            <GeoAltFill className="mapEvent" /> Smesco Exhibition Convention
-            Hall
+            <GeoAltFill className="mapEvent" /> Bandung Convention Centre, Jl.
+            Soekarno Hatta No.354, Bandung
           </p>
           <p>
-            Waku Waku Fest adalah bazaar bertemakan Jepang untuk para komunitas
-            dan pecinta budaya Jepang. Sebuah tempat untuk berkumpul, belanja
-            dan mengekspresikan hal-hal yang berbau Jepang!
+            Ratusan mobil Jepang beragam merek dan tipe tumpah ruah di JDM Fest
+            2024 yang digelar di Bandung Convention Center, Bandung, Jawa Barat.
+            Digelar 1 hari full Sabtu 11 Mei 2024, buanyak mobil-mobil 'ghoib'
+            yang keluar kandangnya.
           </p>
         </div>
       </div>

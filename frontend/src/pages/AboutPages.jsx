@@ -1,4 +1,3 @@
-import NavbarCom from "../components/Home/navbar/navbar";
 import CardAbout from "../components/about/tabAbout";
 import CoverAbout from "../components/about/cover-about";
 import About from "../components/about/about";
@@ -8,18 +7,17 @@ import Kontak from "../components/about/contact";
 import Footer from "../components/Home/footer/FooterComponent";
 
 const AboutPage = () => {
-    return (
+  return (
     <div>
-        <NavbarCom/>
-        <CoverAbout/>
-        <CardAbout/>
-        <About/>
-        <VisiMisi/>
-        <Tim/>
-        <Kontak/>
-        <Footer/>
+      <CoverAbout />
+      <CardAbout />
+      <About />
+      <VisiMisi />
+      <Tim />
+      <Kontak />
+      <Footer />
     </div>
-    );
+  );
 };
 
 export default AboutPage;

@@ -15,31 +15,31 @@ function City() {
             <p>12.051 accomodations</p>
           </div>
         </a>
-        <a href="#" className="menu-card" id="bogor">
+        <a href="/Bogor" className="menu-card" id="bogor">
           <div className="menu_keterangan">
             <h3>Bogor</h3>
             <p>9.250 accomodations</p>
           </div>
         </a>
-        <a href="#" className="menu-card" id="depok">
+        <a href="/Depok" className="menu-card" id="depok">
           <div className="menu_keterangan">
             <h3>Depok</h3>
             <p>7.223 accomodations</p>
           </div>
         </a>
-        <a href="#" className="menu-card" id="tangerang">
+        <a href="/Tangerang" className="menu-card" id="tangerang">
           <div className="menu_keterangan">
             <h3>Tangerang</h3>
             <p>9.999 accomodations</p>
           </div>
         </a>
-        <a href="#" className="menu-card" id="bekasi">
+        <a href="/Bekasi" className="menu-card" id="bekasi">
           <div className="menu_keterangan">
             <h3>Bekasi</h3>
             <p>9.125 accomodations</p>
           </div>
         </a>
-        <a href="#" className="menu-card" id="bandung">
+        <a href="/Bandung" className="menu-card" id="bandung">
           <div className="menu_keterangan">
             <h3>Bandung</h3>
             <p>10.001 accomodations</p>
