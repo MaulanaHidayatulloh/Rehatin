@@ -7,6 +7,7 @@ import City from "../components/Home/city/city";
 import Event from "../components/Home/event/event";
 import Recommendation from "../components/Home/recommendation/recommendation";
 import Note from "../components/Home/note/note";
+import Login from "../components/formlogin/formlogin";
 
 const HomePage = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage = () => {
       <Recommendation />
       <Event />
       <CardCategory />
-      <Note />
+      {/* <Note /> */}
       <Footer />
     </div>
   );

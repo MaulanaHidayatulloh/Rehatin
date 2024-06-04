@@ -33,22 +33,22 @@ function Register() {
           </Modal.Title>
           <Form className="p-5">
             <Form.Group className="mb-3" controlId="inputfirstname">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control type="text" placeholder="first name" />
+              {/* <Form.Label>First Name</Form.Label> */}
+              <Form.Control type="text" placeholder="First name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputlastname">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="last name" />
+              {/* <Form.Label>Last Name</Form.Label> */}
+              <Form.Control type="text" placeholder="Last name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              {/* <Form.Label>Email address</Form.Label> */}
+              <Form.Control type="email" placeholder="Email" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Input password" />
+              {/* <Form.Label>Password</Form.Label> */}
+              <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Button className="w-100 mt-4 shadow" style={{ backgroundColor: "#468392" }}>
+            <Button className="w-100 mt-4 shadow border-0" style={{ backgroundColor: "#468392" }}>
               Register
             </Button>
           </Form>

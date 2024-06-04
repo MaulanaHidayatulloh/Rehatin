@@ -22,7 +22,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<HomePage />} />
-          <Route path="/aboutUs" element={<AboutPage />} />
+          <Route path="/aboutUs" element={<AboutPage />}/>
           <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/blog" element={<BlogPage />} />

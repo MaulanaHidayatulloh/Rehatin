@@ -3,13 +3,17 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Register from "../formregister/formregister";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
 
   return (
     <>
@@ -42,7 +46,7 @@ function Login() {
               {/* <Form.Label><strong>Password</strong></Form.Label> */}
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
-            <Button className="w-100 mt-4 shadow" style={{ backgroundColor: "#468392" }}>
+            <Button className="w-100 mt-4 shadow border-0" style={{ backgroundColor: "#468392" }}>
               Login
             </Button>
             <Register/>

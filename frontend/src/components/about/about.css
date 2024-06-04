@@ -1,0 +1,307 @@
+@import "../../vars.css";
+
+#coverAbout {
+  margin-top: 70px;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../public/assets/images/About/cover-about.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#coverAbout h1 {
+  font-size: 60px;
+  letter-spacing: 10px;
+  text-shadow: 1px 5px 10px rgb(76, 74, 74);
+}
+
+/* card about */
+
+#cardAbout {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-45%);
+}
+
+#cardAbout ul {
+  width: fit-content;
+  padding: 1.5rem 4rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-Fifth);
+  gap: 5rem;
+}
+
+#cardAbout ul li a:hover {
+  content: "";
+  padding-bottom: 5px;
+  border-bottom: 0.18rem solid var(--color-bg);
+  transform: scaleX(0);
+}
+
+/* main about */
+#main-about {
+  height: 100vh;
+  padding: 0px 80px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  position: relative;
+}
+#main-about h2 {
+  text-align: left;
+  color: #141111;
+  font-weight: 600;
+}
+
+#main-about p {
+  text-align: justify;
+  padding-top: 1rem;
+  font-size: 18px;
+  color: #5b5555;
+}
+
+#main-about .grid-kiri {
+  margin: 0 4rem;
+  padding-right: 4rem;
+}
+
+#main-about .grid-kanan img {
+  height: 80%;
+}
+
+/* visi misi */
+#visimisi {
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url("../../../public/assets/images/About/vision-mission.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#visimisi .card{
+    height: 23rem;
+    width: 23rem;
+    margin: 2rem;
+    background-color: var(--color-Fifth);
+    color: var(--color-bg);
+    gap: 4rem;
+    opacity: 90%;
+}
+
+#visimisi .sec-card{
+    gap: 4rem;
+}
+
+#visimisi .card-body {
+    justify-content: center;
+    align-items: center;
+}
+
+#visimisi .card-body p{
+    text-align: justify;
+    padding-top: 1rem;
+}
+
+/* tim */
+#tim {
+  padding: 5rem;
+}
+
+#tim .card{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 3rem;
+  width: 20rem;
+}
+
+#tim .card-body {
+  height: 7rem;
+  margin: 1rem;
+}
+
+#tim h5 {
+  font-weight: bold;
+  font-size: 1.10rem;
+}
+
+/* kontak */
+#kontak {
+  padding: 3rem;
+}
+#kontak img {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 1441px) {
+  #coverAbout {
+    margin-top: 60px;
+    height: 80vh;
+  }
+  #coverAbout h1 {
+    font-size: 80px;
+    letter-spacing: 10px;
+    text-shadow: 1px 5px 10px rgb(76, 74, 74);
+    transform: translateY(-50%);
+  }
+  #cardAbout ul {
+    width: fit-content;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-Fifth);
+    gap: 3rem;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* main about */
+  #main-about {
+    grid-template-columns: 1fr;
+    height: fit-content;
+  }
+  #main-about h2 {
+    text-align: center;
+    color: #141111;
+    font-weight: 600;
+  }
+
+  #main-about p {
+    text-align: justify;
+    padding-top: 1rem;
+    font-size: 20px;
+    color: #5b5555;
+  }
+
+  #main-about .grid-kiri {
+    margin: 0 3rem;
+    padding-right: 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-about .grid-kanan {
+    height: 500px;
+    order: -1;
+  }
+  #main-about .grid-kanan img {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #coverAbout {
+    margin-top: 60px;
+    height: 80vh;
+  }
+  #coverAbout h1 {
+    font-size: 40px;
+    letter-spacing: 10px;
+    text-shadow: 1px 5px 10px rgb(76, 74, 74);
+    transform: translateY(-50%);
+  }
+  #cardAbout ul {
+    width: fit-content;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-Fifth);
+    gap: 3rem;
+    font-size: 12px;
+  }
+
+  /* main about */
+  #main-about {
+    grid-template-columns: 1fr;
+    height: fit-content;
+  }
+  #main-about h2 {
+    text-align: center;
+    color: #141111;
+    font-weight: 600;
+  }
+
+  #main-about p {
+    text-align: justify;
+    padding-top: 1rem;
+    font-size: 15px;
+    color: #5b5555;
+  }
+
+  #main-about .grid-kiri {
+    margin: 0 1rem;
+    padding-right: 0rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-about .grid-kanan {
+    height: 300px;
+    order: -1;
+  }
+  #main-about .grid-kanan img {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  #coverAbout {
+    height: 50vh;
+  }
+  #coverAbout h1 {
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-shadow: 1px 5px 10px rgb(76, 74, 74);
+    transform: translateY(-100%);
+  }
+
+  #cardAbout ul {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-Fifth);
+    gap: 3rem;
+    font-size: 8px;
+  }
+
+  /* main about */
+  #main-about {
+    grid-template-columns: 1fr;
+    height: fit-content;
+  }
+  #main-about h2 {
+    text-align: center;
+    color: #141111;
+    font-weight: 600;
+  }
+
+  #main-about p {
+    text-align: justify;
+    padding-top: 1rem;
+    font-size: 10px;
+    color: #5b5555;
+  }
+
+  #main-about .grid-kiri {
+    margin: 0;
+    padding-right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  #main-about .grid-kanan {
+    height: 200px;
+    order: -1;
+  }
+  #main-about .grid-kanan img {
+    height: 100%;
+  }
+}
