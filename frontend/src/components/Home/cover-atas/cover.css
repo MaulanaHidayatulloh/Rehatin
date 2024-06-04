@@ -62,3 +62,8 @@
   padding: 10px 30px;
   color: var(--color-bg);
 }
+
+.search-container button:hover {
+  color: #000;
+  background-color: var(--color-bg);
+}

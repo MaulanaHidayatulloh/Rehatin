@@ -11,10 +11,7 @@ const DB_USER = process.env.DATABASE_USER ?? "root";
 const DB_PASSWORD = process.env.DATABASE_PASSWORD ?? "";
 const DB_NAME = process.env.DATABASE_NAME ?? "rehatin";
 
-// AUTHENTICATION
-const SECRET =
-  process.env.JWT_SECRET ??
-  "Exhh9D9qh72yXySbB5MnXU3Nq4MLumbFmU7T4iBerdgJ6VTixi4e3t991LUtDqW3";
+const SECRET = process.env.JWT_SECRET ?? "VeryComplexAndRandomStringHere";
 
 module.exports = {
   BASE_URL,

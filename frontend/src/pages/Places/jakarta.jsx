@@ -5,7 +5,7 @@ import Footer from "../../components/Home/footer/FooterComponent";
 const Jakarta = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <PlaceJakarta />
       <Footer />
     </div>

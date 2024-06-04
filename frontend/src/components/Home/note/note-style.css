@@ -1,2 +1,60 @@
 @import "../../../vars.css";
 
+.note-section {
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.note-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-left: 0.7rem;
+  gap: 1.5rem;
+}
+
+.note-title h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.note-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 10px;
+  margin: 0 50px;
+  padding-bottom: 40px;
+  gap: 30px;
+}
+
+.note-card {
+  flex: 0 0 auto;
+  width: 100%;
+  border-radius: 20px;
+  background-color: var(--color-bg);
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.note-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 10px;
+}
+
+.note-card-caption {
+  padding: 10px 30px;
+  text-align: left;
+}
+
+.note-card-caption h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.note-card-caption p {
+  font-size: 1rem;
+  color: var(--color-text);
+}

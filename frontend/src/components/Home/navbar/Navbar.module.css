@@ -1,8 +1,20 @@
 @import "../../../vars.css";
 
-nav {
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.3rem 7%;
   background-color: var(--color-Fifth);
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbarLogo {
   display: flex;
   align-items: center;
 }
@@ -25,17 +37,17 @@ nav {
   padding: 0 0.4rem;
 }
 
-.navnav::after {
+.nav::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 0.18rem solid var(--color-bg);
+  border-bottom: 1.5px solid var(--color-bg);
   transform: scaleX(0);
   transition: 0.1s linear;
 }
 
-.navnav:hover::after {
-  transform: scaleX(1);
+.nav:hover::after {
+  transform: scaleX(1.17);
 }
 
 .login {
@@ -44,13 +56,12 @@ nav {
   border-radius: 5px;
   font-weight: 600;
   margin-left: 20px;
-  text-decoration: none;
+  border: transparent;
   color: var(--color-bg);
 }
 
-.homeNav {
+.active {
   border-bottom: 0.18rem solid var(--color-bg);
-  padding-bottom: 0.5rem;
 }
 
 .login:hover {

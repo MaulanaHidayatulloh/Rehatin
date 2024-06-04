@@ -10,7 +10,7 @@
   flex-direction: column;
   width: auto;
   padding: 20px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Filter bar */
@@ -45,11 +45,33 @@
   border: 1px solid #ccc;
 }
 
-.place-card img {
+.place_gambar {
+  position: relative;
   width: 400px;
-  height: 250px;
-  /* object-fit: cover; */
+  height: 268px;
+}
+
+.place_gambar img {
+  width: 100%;
+
+  object-fit: cover;
   border-radius: 10px;
+}
+
+.place_love {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+}
+
+.love-icon {
+  color: gray;
+  cursor: pointer;
+}
+
+.love-icon.loved {
+  color: red;
 }
 
 .place-card h2 {

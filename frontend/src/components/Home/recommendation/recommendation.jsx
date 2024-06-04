@@ -9,42 +9,49 @@ const cityRecommendations = {
       title: "Happy House",
       rating: 4.5,
       url: "/places/1",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/HappyHouse.png",
       title: "Happy House",
       rating: 4.5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/Tanamera.png",
       title: "Tanamera Coffee",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/Tanamera.png",
       title: "Tanamera Coffee",
-      rating: 3.5,
+      rating: 4.5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/Djournal.png",
       title: "D'journal House",
-      rating: 3.5,
+      rating: 4.5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/ombe.png",
       title: "Ombe Coffee",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/common.png",
       title: "Common Grounds",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
   ],
   Bogor: [
@@ -53,18 +60,21 @@ const cityRecommendations = {
       title: "Bogor Cafe 1",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BogorCafe2.png",
       title: "Bogor Cafe 2",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BogorCafe3.png",
       title: "Bogor Cafe 3",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
   ],
   Depok: [
@@ -73,18 +83,21 @@ const cityRecommendations = {
       title: "Depok Cafe 1",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/DepokCafe2.png",
       title: "Depok Cafe 2",
       rating: 3,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/DepokCafe3.png",
       title: "Depok Cafe 3",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
   ],
   Tangerang: [
@@ -93,12 +106,14 @@ const cityRecommendations = {
       title: "Tangerang Cafe 1",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/TangerangCafe2.png",
       title: "Tangerang Cafe 2",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
   ],
   Bekasi: [
@@ -107,12 +122,14 @@ const cityRecommendations = {
       title: "Bekasi Cafe 1",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BekasiCafe2.png",
       title: "Bekasi Cafe 2",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
   ],
   Bandung: [
@@ -121,18 +138,21 @@ const cityRecommendations = {
       title: "Bandung Cafe 1",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BandungCafe2.png",
       title: "Bandung Cafe 2",
       rating: 4,
       url: "#",
+      harga: "10.000",
     },
     {
       imgSrc: "../src/assets/Home/recommended/BandungCafe3.png",
       title: "Bandung Cafe 3",
       rating: 5,
       url: "#",
+      harga: "10.000",
     },
   ],
 };
@@ -182,6 +202,7 @@ const Recommendation = () => {
                   <StarHalf size={17} className="star-half" />
                 )}
               </p>
+              <p id="recommendation_harga">Perkiraan Harga : {rec.harga}</p>
             </div>
           </div>
         ))}
