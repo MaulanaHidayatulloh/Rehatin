@@ -59,6 +59,21 @@ const EditProfile = () => {
   return (
     <section className={styles.editProfileContainer}>
       <h1>Edit Profil</h1>
+      <div className={styles.profileHeader}>
+        {user && user.foto ? (
+          <img
+            src={`data:image/png;base64,${user.foto}`}
+            alt="User"
+            className={styles.userPhoto}
+          />
+        ) : (
+          <img
+            src="../public/logo/default.png"
+            alt="User"
+            className={styles.userPhoto}
+          />
+        )}
+      </div>
       <form onSubmit={handleSubmit} className={styles.editProfileForm}>
         <div className={styles.formItem}>
           <label>Nama Depan</label>

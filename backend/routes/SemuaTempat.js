@@ -68,7 +68,7 @@ router.get("/:id", async (req, res) => {
 
     place.reviews = reviewsWithBase64Photos; // Attach reviews to the place object
 
-    // Calculate average rating
+    // Calculate average rating and rating distribution
     const totalRating = reviewsWithBase64Photos.reduce(
       (sum, review) => sum + parseFloat(review.rating),
       0
@@ -78,6 +78,16 @@ router.get("/:id", async (req, res) => {
         ? totalRating / reviewsWithBase64Photos.length
         : 0;
     place.averageRating = averageRating; // Attach average rating to the place object
+
+    // Calculate rating distribution
+    const ratingDistribution = [0, 0, 0, 0, 0];
+    reviewsWithBase64Photos.forEach((review) => {
+      const ratingIndex = Math.floor(review.rating) - 1;
+      if (ratingIndex >= 0 && ratingIndex < 5) {
+        ratingDistribution[ratingIndex]++;
+      }
+    });
+    place.ratingDistribution = ratingDistribution; // Attach rating distribution to the place object
 
     console.log("Place Data with Average Rating:", place);
 

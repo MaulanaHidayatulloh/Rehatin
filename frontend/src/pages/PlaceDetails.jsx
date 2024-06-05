@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { StarHalf, StarFill } from "react-bootstrap-icons";
 import Spinner from "react-bootstrap/Spinner";
+import "./PlaceDetails.css";
 
 const PlaceDetail = ({ user, isLoggedIn }) => {
   const { id } = useParams();
@@ -74,6 +75,7 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
   };
 
   const averageRating = place.averageRating ?? 0;
+  const ratingDistribution = place.ratingDistribution ?? [0, 0, 0, 0, 0];
 
   return (
     <div>
@@ -98,15 +100,56 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
       </a>
 
       <h3>Ulasan Pengguna</h3>
+      <p>Total Ulasan: {place.reviews.length}</p>
+      <div className="rating-distribution">
+        {ratingDistribution
+          .slice()
+          .reverse()
+          .map((count, index) => (
+            <div key={index} className="rating-bar">
+              <span>{5 - index}</span>
+              <div className="bar-container">
+                <div
+                  className="bar"
+                  style={{ width: `${(count / place.reviews.length) * 100}%` }}
+                ></div>
+              </div>
+            </div>
+          ))}
+      </div>
+
+      <div>
+        <h3>Tulis Ulasan</h3>
+        <div>
+          <label>Rating:</label>
+          <input
+            type="number"
+            value={reviewRating}
+            onChange={(e) => setReviewRating(parseFloat(e.target.value))}
+            min="0"
+            max="5"
+            step="0.01"
+          />
+        </div>
+        <div>
+          <label>Ulasan:</label>
+          <textarea
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+          ></textarea>
+        </div>
+        <button onClick={handleReviewSubmit}>Kirim Ulasan</button>
+      </div>
 
       {place.reviews.length > 0 ? (
         place.reviews
-          .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+          .slice()
+          .reverse()
           .map((review, index) => (
             <div
               key={index}
               className="review"
-              style={{ padding: " 1rem 20rem" }}
+              style={{ padding: "1rem 20rem" }}
             >
               <div
                 style={{
@@ -166,29 +209,6 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
       ) : (
         <p>Belum ada ulasan.</p>
       )}
-
-      <div>
-        <h3>Tulis Ulasan</h3>
-        <div>
-          <label>Rating:</label>
-          <input
-            type="number"
-            value={reviewRating}
-            onChange={(e) => setReviewRating(parseFloat(e.target.value))}
-            min="0"
-            max="5"
-            step="0.01"
-          />
-        </div>
-        <div>
-          <label>Ulasan:</label>
-          <textarea
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-          ></textarea>
-        </div>
-        <button onClick={handleReviewSubmit}>Kirim Ulasan</button>
-      </div>
     </div>
   );
 };
