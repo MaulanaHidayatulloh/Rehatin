@@ -68,3 +68,12 @@
   background-color: var(--color-bg);
   color: var(--color-hover);
 }
+
+.logout {
+  font-weight: bold;
+  padding: 3px 0;
+  padding-left: 15px;
+  padding-right: 38px;
+  background-color: transparent;
+  border: transparent;
+}

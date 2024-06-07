@@ -41,6 +41,10 @@ app.use(
 // Include the route handlers from separate files
 const jakartaRoutes = require("./routes/jakarta");
 const bogorRoutes = require("./routes/bogor");
+const depokRoutes = require("./routes/depok");
+const tangerangRoutes = require("./routes/tangerang");
+const bekasiRoutes = require("./routes/bekasi");
+const bandungRoutes = require("./routes/bandung");
 const SemuaTempat = require("./routes/SemuaTempat");
 const authRoutes = require("./auth");
 const parkRoutes = require("./routes/park");
@@ -48,6 +52,10 @@ const parkRoutes = require("./routes/park");
 // Mount the routes on specific paths
 app.use("/jakarta", jakartaRoutes);
 app.use("/bogor", bogorRoutes);
+app.use("/depok", depokRoutes);
+app.use("/tangerang", tangerangRoutes);
+app.use("/bekasi", bekasiRoutes);
+app.use("/bandung", bandungRoutes);
 app.use("/place", SemuaTempat);
 app.use("/auth", authRoutes);
 app.use("/park", parkRoutes);

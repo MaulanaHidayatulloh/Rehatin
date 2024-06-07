@@ -2,7 +2,12 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
+const multer = require("multer");
 const database = require("./model/database");
+
+// Middleware untuk mengunggah file menggunakan multer
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 // Fungsi untuk mengonversi buffer ke Base64
 const encodeImageToBase64 = (buffer) => {
@@ -12,12 +17,12 @@ const encodeImageToBase64 = (buffer) => {
 router.post(
   "/register",
   [
-    body("first_name").notEmpty().withMessage("First name is required"),
-    body("last_name").notEmpty().withMessage("Last name is required"),
-    body("email").isEmail().withMessage("Valid email is required"),
+    body("first_name").notEmpty().withMessage("Nama depan harus diisi"),
+    body("last_name").notEmpty().withMessage("Nama belakang harus diisi"),
+    body("email").isEmail().withMessage("Email harus valid"),
     body("password")
       .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters"),
+      .withMessage("Kata sandi harus minimal 6 karakter"),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -25,39 +30,55 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { first_name, last_name, email, password } = req.body;
+    const {
+      first_name,
+      last_name,
+      email,
+      password,
+      gender,
+      tanggal_lahir,
+      asal,
+    } = req.body;
 
     try {
-      // Check if the user already exists
+      // Periksa apakah pengguna sudah ada
       const [existingUser] = await database.query(
         "SELECT * FROM user WHERE email = ?",
         [email]
       );
       if (existingUser.length > 0) {
-        return res.status(400).json({ error: "Email already in use" });
+        return res.status(400).json({ error: "Email sudah digunakan" });
       }
 
-      // Hash the password
+      // Hash kata sandi
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Insert the new user into the database
+      // Masukkan pengguna baru ke database
       const result = await database.query(
-        "INSERT INTO user (first_name, last_name, email, password) VALUES (?, ?, ?, ?)",
-        [first_name, last_name, email, hashedPassword]
+        "INSERT INTO user (first_name, last_name, email, password, gender, tanggal_lahir, asal, foto, level, tanggal_daftar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())",
+        [
+          first_name,
+          last_name,
+          email,
+          hashedPassword,
+          gender,
+          tanggal_lahir,
+          asal,
+          Buffer.alloc(0),
+          1,
+        ]
       );
 
       if (result.affectedRows === 1) {
-        return res
-          .status(201)
-          .json({ message: "User registered successfully" });
+        return res.status(201).json({ message: "Pengguna berhasil terdaftar" });
       } else {
-        throw new Error("Failed to insert user into database");
+        throw new Error("Gagal memasukkan pengguna ke database");
       }
     } catch (error) {
-      console.error("Error registering user:", error);
+      console.error("Error saat mendaftarkan pengguna:", error);
       return res
         .status(500)
-        .json({ error: "Failed to register user in database" });
+        .json({ error: "Gagal mendaftarkan pengguna di database" });
     }
   }
 );
@@ -65,8 +86,8 @@ router.post(
 router.post(
   "/login",
   [
-    body("email").isEmail().withMessage("Valid email is required"),
-    body("password").notEmpty().withMessage("Password is required"),
+    body("email").isEmail().withMessage("Email harus valid"),
+    body("password").notEmpty().withMessage("Kata sandi harus diisi"),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -77,36 +98,40 @@ router.post(
     const { email, password } = req.body;
 
     try {
-      // Find the user by email
+      // Temukan pengguna berdasarkan email
       const [users] = await database.query(
         "SELECT * FROM user WHERE email = ?",
         [email]
       );
       if (users.length === 0) {
-        return res.status(400).json({ error: "Invalid email or password" });
+        return res
+          .status(400)
+          .json({ error: "Email atau kata sandi tidak valid" });
       }
 
       const user = users[0];
 
-      // Check the password
+      // Periksa kata sandi
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res.status(400).json({ error: "Invalid email or password" });
+        return res
+          .status(400)
+          .json({ error: "Email atau kata sandi tidak valid" });
       }
 
-      // Encode the image to Base64
+      // Encode gambar ke Base64
       let fotoBase64 = null;
       if (user.foto) {
         fotoBase64 = encodeImageToBase64(user.foto);
       }
 
-      // Format the birth date to include only date, month, and year
+      // Format tanggal lahir
       const birthDate = new Date(user.tanggal_lahir);
       const formattedBirthDate = `${birthDate.getFullYear()}-${String(
         birthDate.getMonth() + 1
       ).padStart(2, "0")}-${String(birthDate.getDate()).padStart(2, "0")}`;
 
-      // Save user info in session
+      // Simpan info pengguna di sesi
       req.session.user = {
         id: user.id,
         email: user.email,
@@ -133,8 +158,8 @@ router.post(
         },
       });
     } catch (error) {
-      console.error("Error logging in:", error);
-      return res.status(500).json({ error: "Internal server error" });
+      console.error("Error saat login:", error);
+      return res.status(500).json({ error: "Terjadi kesalahan pada server" });
     }
   }
 );
@@ -142,38 +167,48 @@ router.post(
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      return res
-        .status(500)
-        .json({ error: "Could not log out, please try again" });
+      return res.status(500).json({ error: "Tidak bisa logout, coba lagi" });
     }
     res.clearCookie("connect.sid");
-    return res.json({ message: "Logged out successfully" });
+    return res.json({ message: "Berhasil logout" });
   });
 });
 
-router.put("/user/:id", async (req, res) => {
+router.put("/user/:id", upload.single("photo"), async (req, res) => {
   const userId = req.params.id;
   const updatedUserData = req.body;
+  const photo = req.file ? req.file.buffer : null;
 
   try {
-    // Update user data in the database
-    await database.query(
-      "UPDATE user SET first_name = ?, last_name = ?, email = ?, gender = ?, tanggal_lahir = ?, asal = ? WHERE id = ?",
-      [
-        updatedUserData.first_name,
-        updatedUserData.last_name,
-        updatedUserData.email,
-        updatedUserData.gender,
-        updatedUserData.tanggal_lahir,
-        updatedUserData.asal,
-        userId,
-      ]
-    );
+    let query = `UPDATE user 
+                 SET first_name = ?, last_name = ?, email = ?, gender = ?, tanggal_lahir = ?, asal = ?`;
+    let queryParams = [
+      updatedUserData.first_name,
+      updatedUserData.last_name,
+      updatedUserData.email,
+      updatedUserData.gender,
+      updatedUserData.tanggal_lahir,
+      updatedUserData.asal,
+      userId,
+    ];
 
-    return res.status(200).json({ message: "User data updated successfully" });
+    // Jika ada foto baru, tambahkan ke query dan parameter
+    if (photo) {
+      query += ", foto = ?";
+      queryParams.splice(queryParams.length - 1, 0, photo); // Sisipkan foto sebelum userId
+    }
+
+    query += " WHERE id = ?";
+
+    // Update data pengguna di database
+    await database.query(query, queryParams);
+
+    return res
+      .status(200)
+      .json({ message: "Data pengguna berhasil diperbarui" });
   } catch (error) {
-    console.error("Error updating user data:", error);
-    return res.status(500).json({ error: "Internal server error" });
+    console.error("Error saat memperbarui data pengguna:", error);
+    return res.status(500).json({ error: "Terjadi kesalahan pada server" });
   }
 });
 

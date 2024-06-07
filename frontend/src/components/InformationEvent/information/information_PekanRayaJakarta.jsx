@@ -8,22 +8,23 @@ function Information() {
       <div className="event-card">
         <div className="event-details">
           <img
-            src="../src/assets/EventInformation/PekanRayaJakarta.png"
+            src="../src/assets/EventInformation/pekanraya.png"
             alt="Event"
             className="event-image"
           />
           <h2>Pekan Raya Jakarta</h2>
           <p>
-            <CalendarEvent className="calendarEvent" /> 25 - 26 May 2024
+            <CalendarEvent className="calendarEvent" /> 28 Juni 2024
           </p>
           <p>
-            <GeoAltFill className="mapEvent" /> Smesco Exhibition Convention
-            Hall
+            <GeoAltFill className="mapEvent" /> Jl. Benyamin Suaeb, RT.13/RW.7,
+            Gn. Sahari Utara, Jakarta
           </p>
           <p>
-            Waku Waku Fest adalah bazaar bertemakan Jepang untuk para komunitas
-            dan pecinta budaya Jepang. Sebuah tempat untuk berkumpul, belanja
-            dan mengekspresikan hal-hal yang berbau Jepang!
+            Pekan Raya Jakarta atau Jakarta Fair adalah acara pameran tahunan
+            terbesar di Asia Tenggara. Walaupun dinamai "pekan", pameran ini
+            biasanya berlangsung selama satu bulan penuh dari bulan Juni sampai
+            bulan Juli untuk memperingati hari jadi kota Jakarta
           </p>
         </div>
       </div>

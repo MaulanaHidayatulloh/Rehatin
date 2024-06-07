@@ -15,12 +15,15 @@ import PekanRayaJakarta from "./pages/InformationEvent/PekanRayaJakarta";
 import JDMFestBandung from "./pages/InformationEvent/JDMFestBandung";
 import Jakarta from "./pages/Places/jakarta";
 import Bogor from "./pages/Places/bogor";
+import Depok from "./pages/Places/depok";
+import Tangerang from "./pages/Places/tangerang";
+import Bekasi from "./pages/Places/bekasi";
+import Bandung from "./pages/Places/bandung";
 import PlaceDetails from "./pages/PlaceDetails";
-import Wishlist from "./components/Place/wishlist";
 import NavbarCom from "./components/Home/navbar/navbar";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
-import PlacesContainer from "./pages/Places/park";
+import KategoriTempat from "./pages/Places/KategoriTempat-Pages";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -67,17 +70,20 @@ function App() {
           <Route path="/JDMFestBandung" element={<JDMFestBandung />} />
           <Route path="/Jakarta" element={<Jakarta />} />
           <Route path="/Bogor" element={<Bogor />} />
+          <Route path="/Depok" element={<Depok />} />
+          <Route path="/Tangerang" element={<Tangerang />} />
+          <Route path="/Bekasi" element={<Bekasi />} />
+          <Route path="/Bandung" element={<Bandung />} />
           <Route
             path="/places/:id"
             element={<PlaceDetails user={user} isLoggedIn={isLoggedIn} />}
           />
-          <Route path="/wishlistaja" element={<Wishlist />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/edit-profile" element={<EditProfile />} />
-          <Route path="/category/:categoryId" element={<PlacesContainer />} />
+          <Route path="/category/:categoryId" element={<KategoriTempat />} />
           <Route
             path="/category/:categoryId/location/:locationId"
-            element={<PlacesContainer />}
+            element={<KategoriTempat />}
           />
         </Routes>
       </Router>

@@ -1,0 +1,30 @@
+.rating-distribution {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.rating-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.rating-bar span {
+  width: 20px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background-color: #008000;
+  border-radius: 5px;
+}

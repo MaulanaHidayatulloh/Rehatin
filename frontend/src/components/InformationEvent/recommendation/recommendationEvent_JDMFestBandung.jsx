@@ -9,12 +9,12 @@ function RecommendationEvent() {
       <div className="recommendationEvent-card">
         <a href="/WakuWakuFestival">
           <img
-            src="../src/assets/EventInformation/prjrecommendation.png"
+            src="../src/assets/EventInformation/wakurecommendation.png"
             alt="Pesta Bebas Berselancar"
             className="recommendationEvent-image"
           />
           <div className="recommendationEvent-details">
-            <h4>Pekan Raya Jakarta</h4>
+            <h4>Waku - Waku Festival</h4>
           </div>
         </a>
       </div>

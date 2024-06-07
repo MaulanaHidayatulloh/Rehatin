@@ -6,7 +6,7 @@ import { GeoAltFill } from "react-bootstrap-icons";
 import "./place.css";
 import FilterComponent from "./FilterComponent";
 
-const Bogor = () => {
+const Bandung = () => {
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRating, setSelectedRating] = useState(null);
@@ -18,7 +18,7 @@ const Bogor = () => {
     setWishlist(savedWishlist);
 
     axios
-      .get("http://localhost:8000/bogor")
+      .get("http://localhost:8000/bandung")
       .then((response) => {
         const updatedPlaces = response.data.map((place) => {
           const words = place.deskripsi.split(" ");
@@ -143,4 +143,4 @@ const Bogor = () => {
   );
 };
 
-export default Bogor;
+export default Bandung;

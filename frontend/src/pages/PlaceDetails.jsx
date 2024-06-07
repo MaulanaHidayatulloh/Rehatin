@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { StarHalf, StarFill } from "react-bootstrap-icons";
 import Spinner from "react-bootstrap/Spinner";
+import "./PlaceDetails.css";
 
 const PlaceDetail = ({ user, isLoggedIn }) => {
   const { id } = useParams();
@@ -74,6 +75,7 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
   };
 
   const averageRating = place.averageRating ?? 0;
+  const ratingDistribution = place.ratingDistribution ?? [0, 0, 0, 0, 0];
 
   return (
     <div>
@@ -98,51 +100,23 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
       </a>
 
       <h3>Ulasan Pengguna</h3>
-
-      {place.reviews.length > 0 ? (
-        place.reviews
-          .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-          .map((review, index) => (
-            <div key={index} className="review">
-              <div>
-                {review.foto ? (
-                  <img
-                    src={`data:image/png;base64,${review.foto}`}
-                    alt="user"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      borderRadius: "100%",
-                    }}
-                  />
-                ) : (
-                  <img
-                    src="../public/logo/default.png"
-                    alt="user"
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                )}
-                <p>
-                  {typeof review.rating === "number"
-                    ? review.rating.toFixed(2)
-                    : review.rating}
-                  {Array.from({ length: Math.floor(review.rating) }, (_, i) => (
-                    <StarFill key={i} size={17} className="star-full" />
-                  ))}
-                  {review.rating % 1 !== 0 && (
-                    <StarHalf size={17} className="star-half" />
-                  )}
-                </p>
+      <p>Total Ulasan: {place.reviews.length}</p>
+      <div className="rating-distribution">
+        {ratingDistribution
+          .slice()
+          .reverse()
+          .map((count, index) => (
+            <div key={index} className="rating-bar">
+              <span>{5 - index}</span>
+              <div className="bar-container">
+                <div
+                  className="bar"
+                  style={{ width: `${(count / place.reviews.length) * 100}%` }}
+                ></div>
               </div>
-              <p>{review.ulasan}</p>
-              <p>
-                - {review.first_name} {review.last_name}
-              </p>
             </div>
-          ))
-      ) : (
-        <p>Belum ada ulasan.</p>
-      )}
+          ))}
+      </div>
 
       <div>
         <h3>Tulis Ulasan</h3>
@@ -166,6 +140,75 @@ const PlaceDetail = ({ user, isLoggedIn }) => {
         </div>
         <button onClick={handleReviewSubmit}>Kirim Ulasan</button>
       </div>
+
+      {place.reviews.length > 0 ? (
+        place.reviews
+          .slice()
+          .reverse()
+          .map((review, index) => (
+            <div
+              key={index}
+              className="review"
+              style={{ padding: "1rem 20rem" }}
+            >
+              <div
+                style={{
+                  border: "1px solid #000",
+                  padding: "2rem",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: "10px",
+                  }}
+                >
+                  {review.foto ? (
+                    <img
+                      src={`data:image/png;base64,${review.foto}`}
+                      alt="user"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "100%",
+                        border: "1px solid #000",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      src="../public/logo/default.png"
+                      alt="user"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "100%",
+                        border: "1px solid #000",
+                      }}
+                    />
+                  )}
+                  <p style={{ paddingTop: "0.8rem" }}>
+                    {review.first_name} {review.last_name}
+                  </p>
+                </div>
+                <p>
+                  {typeof review.rating === "number"
+                    ? review.rating.toFixed(2)
+                    : review.rating}
+                  {Array.from({ length: Math.floor(review.rating) }, (_, i) => (
+                    <StarFill key={i} size={17} className="star-full" />
+                  ))}
+                  {review.rating % 1 !== 0 && (
+                    <StarHalf size={17} className="star-half" />
+                  )}
+                </p>
+                <p>{review.ulasan}</p>
+              </div>
+            </div>
+          ))
+      ) : (
+        <p>Belum ada ulasan.</p>
+      )}
     </div>
   );
 };

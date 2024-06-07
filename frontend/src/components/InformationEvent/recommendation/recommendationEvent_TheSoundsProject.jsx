@@ -7,14 +7,14 @@ function RecommendationEvent() {
       <h3 className="recommendationEvent-title">Recommendation Event</h3>
 
       <div className="recommendationEvent-card">
-        <a href="/WakuWakuFestival">
+        <a href="/JDMFestBandung">
           <img
-            src="../src/assets/EventInformation/prjrecommendation.png"
+            src="../src/assets/EventInformation/jdmrecommendation.png"
             alt="Pesta Bebas Berselancar"
             className="recommendationEvent-image"
           />
           <div className="recommendationEvent-details">
-            <h4>Pekan Raya Jakarta</h4>
+            <h4>JDM Fest Band</h4>
           </div>
         </a>
       </div>

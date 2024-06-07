@@ -1,4 +1,3 @@
-import Navbar from "../../components/InformationEvent/Navbar/NavbarEvent";
 import Footer from "../../components/Home/footer/FooterComponent";
 import Information from "../../components/InformationEvent/information/information_PestaBebasBerselancar";
 import RecommendationEvent from "../../components/InformationEvent/recommendation/recommendationEvent_PestaBebasBerselancar";
@@ -6,7 +5,6 @@ import RecommendationEvent from "../../components/InformationEvent/recommendatio
 const TheEliteShowcase = () => {
   return (
     <div>
-      <Navbar />
       <Information />
       <RecommendationEvent />
       <Footer />
