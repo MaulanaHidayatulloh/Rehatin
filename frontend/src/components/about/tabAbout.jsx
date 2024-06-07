@@ -52,7 +52,7 @@ function CardAbout() {
             spy={true}
             smooth={true}
             hashSpy={true}
-            offset={-50}
+            offset={-95}
             duration={500}
             className="text-decoration-none text-white"
           >

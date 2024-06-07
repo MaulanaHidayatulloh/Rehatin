@@ -10,7 +10,6 @@ import Footer from "../components/Home/footer/FooterComponent";
 const AboutPage = () => {
     return (
     <div>
-        <NavbarCom/>
         <CoverAbout/>
         <CardAbout/>
         <About/>

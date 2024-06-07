@@ -61,7 +61,7 @@ function Register() {
           </Modal.Title>
           <Form className="p-5" onSubmit={handleRegister}>
             <Form.Group className="mb-3" controlId="inputfirstname">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label className="fw-bold">First Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="First name"
@@ -70,7 +70,7 @@ function Register() {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputlastname">
-              <Form.Label>Last Name</Form.Label>
+              <Form.Label className="fw-bold">Last Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Last name"
@@ -79,7 +79,7 @@ function Register() {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label className="fw-bold">Email address</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
@@ -88,7 +88,7 @@ function Register() {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="">
-              <Form.Label>Password</Form.Label>
+              <Form.Label className="fw-bold">Password</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Input password"

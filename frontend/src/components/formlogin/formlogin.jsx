@@ -46,19 +46,21 @@ function Login({ show, handleClose, setUser, setIsLoggedIn }) {
       <Modal.Header closeButton className="border-bottom-0"></Modal.Header>
       <Modal.Body>
         <Modal.Title className="p-3 text-center fw-bold">Rehatin</Modal.Title>
-        <Form className="p-5" onSubmit={handleLogin}>
+        <Form className="py-2 px-5" onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label className="fw-bold">Email Address</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Email"
+              placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="">
+            <Form.Label className="fw-bold">Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Input password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

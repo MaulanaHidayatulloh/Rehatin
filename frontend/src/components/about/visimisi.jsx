@@ -6,7 +6,7 @@ import CardBody from "react-bootstrap/esm/CardBody";
 function VisiMisi() {
   return (
     <section id="visimisi">
-      <div className="sec-card d-flex">
+      <div className="sec-card">
         <Card>
           <CardBody>
             <h3 className="fw-bold">Our Vision</h3>

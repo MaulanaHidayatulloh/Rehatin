@@ -1,5 +1,6 @@
 import React from "react";
 import "./aboutus.css";
+import { Link } from "react-router-dom";
 
 function AboutUs() {
   return (
@@ -18,7 +19,9 @@ function AboutUs() {
           Rehatin helps you plan the perfect adventure and deliver an
           unforgettable holiday experience.
         </p>
-        <button>Learn More</button>
+        <Link to="/aboutUs">
+          <button>Learn More</button>
+        </Link>
       </div>
     </section>
   );

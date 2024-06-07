@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Login from "../../formlogin/formlogin";
 import Dropdown from "react-bootstrap/Dropdown";
+import { NavLink } from 'react-router-dom';
 
 function NavbarCom({ onLogout }) {
   const [show, setShow] = useState(false);
@@ -71,34 +72,34 @@ function NavbarCom({ onLogout }) {
         <img src="../public/logo/logo_rehatin.png" alt="logo" />
       </a>
       <nav className={styles.navbar}>
-        <a
-          href="/"
+        <NavLink
+          to="/"
           className={`${styles.nav} ${
             activeNav === "home" ? styles.active : ""
           }`}
           onClick={() => handleNavClick("home")}
         >
           Home
-        </a>
-        <a
-          href="/aboutUs"
+        </NavLink>
+        <NavLink
+          to="/aboutUs"
           className={`${styles.nav} ${
             activeNav === "aboutUs" ? styles.active : ""
           }`}
           onClick={() => handleNavClick("aboutUs")}
         >
           About Us
-        </a>
-        <a
-          href="/wishlist"
+        </NavLink>
+        <NavLink
+          to="/wishlist"
           className={`${styles.nav} ${
             activeNav === "wishlist" ? styles.active : ""
           }`}
           onClick={() => handleNavClick("wishlist")}
         >
           Wishlist
-        </a>
-        <a
+        </NavLink>
+        <NavLink
           href="/blog"
           className={`${styles.nav} ${
             activeNav === "blog" ? styles.active : ""
@@ -106,7 +107,7 @@ function NavbarCom({ onLogout }) {
           onClick={() => handleNavClick("blog")}
         >
           Blog
-        </a>
+        </NavLink>
         {isLoggedInState ? (
           <div className={styles.userInfo}>
             <Dropdown>
