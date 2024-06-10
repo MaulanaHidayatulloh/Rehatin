@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
 import Login from "../../formlogin/formlogin";
 import Dropdown from "react-bootstrap/Dropdown";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { List } from "react-bootstrap-icons";
 
 function NavbarCom({ onLogout }) {
   const [show, setShow] = useState(false);
   const [userState, setUserState] = useState(null);
   const [isLoggedInState, setIsLoggedInState] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navbarNavRef = useRef(null);
+  const hamburgerMenuRef = useRef(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -26,6 +31,23 @@ function NavbarCom({ onLogout }) {
     if (storedActiveNav) {
       setActiveNav(storedActiveNav);
     }
+
+    const handleClickOutside = (e) => {
+      if (
+        navbarNavRef.current &&
+        !navbarNavRef.current.contains(e.target) &&
+        hamburgerMenuRef.current &&
+        !hamburgerMenuRef.current.contains(e.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   const handleClose = () => setShow(false);
@@ -66,48 +88,61 @@ function NavbarCom({ onLogout }) {
     localStorage.setItem("activeNav", nav);
   };
 
+  //Toggle class active untuk hamburger menu
+  //Ketika hamburger menu di klik
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <a className={styles.navbarLogo}>
         <img src="../public/logo/logo_rehatin.png" alt="logo" />
       </a>
       <nav className={styles.navbar}>
-        <NavLink
-          to="/"
-          className={`${styles.nav} ${
-            activeNav === "home" ? styles.active : ""
+        <div
+          className={`${styles.navbarNav} ${
+            isMobileMenuOpen ? styles.active : ""
           }`}
-          onClick={() => handleNavClick("home")}
+          ref={navbarNavRef}
         >
-          Home
-        </NavLink>
-        <NavLink
-          to="/aboutUs"
-          className={`${styles.nav} ${
-            activeNav === "aboutUs" ? styles.active : ""
-          }`}
-          onClick={() => handleNavClick("aboutUs")}
-        >
-          About Us
-        </NavLink>
-        <NavLink
-          to="/wishlist"
-          className={`${styles.nav} ${
-            activeNav === "wishlist" ? styles.active : ""
-          }`}
-          onClick={() => handleNavClick("wishlist")}
-        >
-          Wishlist
-        </NavLink>
-        <NavLink
-          href="/blog"
-          className={`${styles.nav} ${
-            activeNav === "blog" ? styles.active : ""
-          }`}
-          onClick={() => handleNavClick("blog")}
-        >
-          Blog
-        </NavLink>
+          <NavLink
+            to="/"
+            className={`${styles.nav} ${
+              activeNav === "home" ? styles.active : ""
+            }`}
+            onClick={() => handleNavClick("home")}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/aboutUs"
+            className={`${styles.nav} ${
+              activeNav === "aboutUs" ? styles.active : ""
+            }`}
+            onClick={() => handleNavClick("aboutUs")}
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            to="/wishlist"
+            className={`${styles.nav} ${
+              activeNav === "wishlist" ? styles.active : ""
+            }`}
+            onClick={() => handleNavClick("wishlist")}
+          >
+            Wishlist
+          </NavLink>
+          <NavLink
+            to="/blog"
+            className={`${styles.nav} ${
+              activeNav === "blog" ? styles.active : ""
+            }`}
+            onClick={() => handleNavClick("blog")}
+          >
+            Blog
+          </NavLink>
+        </div>
         {isLoggedInState ? (
           <div className={styles.userInfo}>
             <Dropdown>
@@ -128,7 +163,7 @@ function NavbarCom({ onLogout }) {
                       width: "50px",
                       height: "50px",
                       borderRadius: "100%",
-                      border: "1px solid #000",
+                      border: "1px solid #c4c4c4",
                     }}
                   />
                 ) : (
@@ -140,7 +175,7 @@ function NavbarCom({ onLogout }) {
                       width: "50px",
                       height: "50px",
                       borderRadius: "100%",
-                      border: "1px solid #000",
+                      border: "1px solid #c4c4c4",
                     }}
                   />
                 )}
@@ -182,6 +217,14 @@ function NavbarCom({ onLogout }) {
             Log In
           </button>
         )}
+        <div
+          id="hamburger-menu"
+          onClick={toggleMobileMenu}
+          ref={hamburgerMenuRef}
+          className={styles.hamburgerMenu}
+        >
+          <List />
+        </div>
       </nav>
       <Login
         show={show}

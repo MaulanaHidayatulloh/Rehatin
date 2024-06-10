@@ -1,4 +1,3 @@
-// App.js
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -24,6 +23,15 @@ import NavbarCom from "./components/Home/navbar/navbar";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import KategoriTempat from "./pages/Places/KategoriTempat-Pages";
+import Blog1 from "./pages/Blog/Blog_1";
+import Blog2 from "./pages/Blog/Blog_2";
+import Blog3 from "./pages/Blog/Blog_3";
+import Blog4 from "./pages/Blog/Blog_4";
+import Blog5 from "./pages/Blog/Blog_5";
+import Blog6 from "./pages/Blog/Blog_6";
+import Blog7 from "./pages/Blog/Blog_7";
+import Blog8 from "./pages/Blog/Blog_8";
+import Blog9 from "./pages/Blog/Blog_9";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -74,6 +82,15 @@ function App() {
           <Route path="/Tangerang" element={<Tangerang />} />
           <Route path="/Bekasi" element={<Bekasi />} />
           <Route path="/Bandung" element={<Bandung />} />
+          <Route path="/blog/1" element={<Blog1 />} />
+          <Route path="/blog/2" element={<Blog2 />} />
+          <Route path="/blog/3" element={<Blog3 />} />
+          <Route path="/blog/4" element={<Blog4 />} />
+          <Route path="/blog/5" element={<Blog5 />} />
+          <Route path="/blog/6" element={<Blog6 />} />
+          <Route path="/blog/7" element={<Blog7 />} />
+          <Route path="/blog/8" element={<Blog8 />} />
+          <Route path="/blog/9" element={<Blog9 />} />
           <Route
             path="/places/:id"
             element={<PlaceDetails user={user} isLoggedIn={isLoggedIn} />}

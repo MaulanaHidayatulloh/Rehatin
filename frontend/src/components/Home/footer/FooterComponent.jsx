@@ -16,7 +16,7 @@ function Footer() {
             <Row className="gap-3">
               <Col sm={4}>
                 <h5>
-                  <img src="public\logo\logo-rehatin-w.png" />
+                  <img src="..\public\logo\logo-rehatin-w.png" />
                 </h5>
                 <p className="text-align-justify me-5">
                   "Temukan kebahagiaan di setiap sudut kota! Nikmati rekomendasi
