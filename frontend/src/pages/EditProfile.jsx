@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Footer from "../components/Home/footer/FooterComponent";
 import styles from "./EditProfile.module.css";
 
 const EditProfile = () => {
@@ -57,95 +58,105 @@ const EditProfile = () => {
   };
 
   return (
-    <section className={styles.editProfileContainer}>
-      <h1>Edit Profil</h1>
-      <div className={styles.profileHeader}>
-        {user && user.foto ? (
-          <img
-            src={`data:image/png;base64,${user.foto}`}
-            alt="User"
-            className={styles.userPhoto}
-          />
-        ) : (
-          <img
-            src="../public/logo/default.png"
-            alt="User"
-            className={styles.userPhoto}
-          />
-        )}
+    <div>
+      <div className={styles.editProfileContainer}>
+        <div className={styles.editProfileTitle}>
+          <h2>Edit Profile</h2>
+        </div>
+        <div className={styles.profileCard}>
+          <div className={styles.profileHeader}>
+            {user && user.foto ? (
+              <img
+                src={`data:image/png;base64,${user.foto}`}
+                alt="User"
+                className={styles.userPhoto}
+              />
+            ) : (
+              <img
+                src="../public/logo/default.png"
+                alt="User"
+                className={styles.userPhoto}
+              />
+            )}
+          </div>
+
+          <div className={styles.profileData}>
+            <h3>Identity</h3>
+            <form onSubmit={handleSubmit} className={styles.editProfileForm}>
+              <div className={styles.formItem}>
+                <label>Nama Depan</label>
+                <span>:</span>
+                <input
+                  type="text"
+                  name="first_name"
+                  value={formData.first_name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formItem}>
+                <label>Nama Belakang</label>
+                <span>:</span>
+                <input
+                  type="text"
+                  name="last_name"
+                  value={formData.last_name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formItem}>
+                <label>Gender</label>
+                <span>:</span>
+                <input
+                  type="text"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formItem}>
+                <label>Tanggal Lahir</label>
+                <span>:</span>
+                <input
+                  type="date"
+                  name="tanggal_lahir"
+                  value={formData.tanggal_lahir}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formItem}>
+                <label>Asal</label>
+                <span>:</span>
+                <input
+                  type="text"
+                  name="asal"
+                  value={formData.asal}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className={styles.formItem}>
+                <label>Foto Profile</label>
+                <span>:</span>
+                <input
+                  type="file"
+                  name="photo"
+                  accept="image/*"
+                  onChange={handleChange}
+                  style={{ border: "none" }}
+                />
+              </div>
+              <div className={styles.buttonContainer}>
+                <button type="button" onClick={() => navigate("/profile")}>
+                  Batal
+                </button>
+                <button type="submit">Simpan</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <form onSubmit={handleSubmit} className={styles.editProfileForm}>
-        <div className={styles.formItem}>
-          <label>Nama Depan</label>
-          <input
-            type="text"
-            name="first_name"
-            value={formData.first_name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Nama Belakang</label>
-          <input
-            type="text"
-            name="last_name"
-            value={formData.last_name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Gender</label>
-          <input
-            type="text"
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Tanggal Lahir</label>
-          <input
-            type="date"
-            name="tanggal_lahir"
-            value={formData.tanggal_lahir}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Asal</label>
-          <input
-            type="text"
-            name="asal"
-            value={formData.asal}
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.formItem}>
-          <label>Foto</label>
-          <input
-            type="file"
-            name="photo"
-            accept="image/*"
-            onChange={handleChange}
-          />
-        </div>
-        <div className={styles.buttonContainer}>
-          <button type="button" onClick={() => navigate("/profile")}>
-            Batal
-          </button>
-          <button type="submit">Simpan</button>
-        </div>
-      </form>
-    </section>
+
+      <Footer />
+    </div>
   );
 };
 

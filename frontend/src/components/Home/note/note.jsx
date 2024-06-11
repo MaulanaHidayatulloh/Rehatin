@@ -6,14 +6,14 @@ const noteRecommendation = [
     imgSrc: "../src/assets/Home/note/note-1.png",
     title:
       "Eksplorasi Tempat Hangout: Panduan Nongkrong Asyik di Kota-Kota Besar",
-    url: "#",
+    url: "/blog/9",
     publisher: "Nongkrong Kuy",
     time: "3 Min read",
   },
   {
     imgSrc: "../src/assets/Home/note/note-2.png",
     title: "Travel dan Hangout: Kombinasi Seru Untuk Liburan Akhir Pekan",
-    url: "#",
+    url: "/blog/7",
     publisher: "Nongkrong Kuy",
     time: "3 Min read",
   },
@@ -21,7 +21,7 @@ const noteRecommendation = [
     imgSrc: "../src/assets/Home/note/note-3.png",
     title:
       "Panduan Hangout Untuk Traveler: Menemukan Tempat Nongkrong Ideal di Setiap Destinasi",
-    url: "#",
+    url: "/blog/8",
     publisher: "Nongkrong Kuy",
     time: "3 Min read",
   },

@@ -37,6 +37,10 @@
   padding: 0 0.4rem;
 }
 
+.navbarNav {
+  display: flex;
+}
+
 .nav::after {
   content: "";
   display: block;
@@ -76,4 +80,51 @@
   padding-right: 38px;
   background-color: transparent;
   border: transparent;
+}
+
+.hamburgerMenu {
+  display: none;
+  margin-left: 1rem;
+  font-size: 2rem;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburgerMenu {
+    display: inline-block;
+  }
+
+  .navbarNav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 20rem;
+    height: 100vh;
+    transition: 0.3s;
+    display: block;
+    text-align: left;
+    border-left: 1px solid #000;
+  }
+
+  .navbarNav.active {
+    right: 0;
+  }
+
+  .nav {
+    color: #000000;
+    display: block;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .nav::after {
+    border-bottom: 0.1rem solid var(--color-Fifth);
+    transform-origin: 0 0;
+  }
+
+  .nav:hover {
+    color: var(--color-Fifth);
+  }
 }
