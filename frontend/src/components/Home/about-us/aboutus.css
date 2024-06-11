@@ -55,3 +55,139 @@
   color: var(--color-Fifth);
   background-color: var(--color-bg);
 }
+
+@media screen and (max-width: 1024px) {
+  .home {
+    gap: 5rem;
+    border-radius: 1.5rem;
+    margin-top: -1.5rem;
+  }
+
+  .home .home-content {
+    max-width: auto;
+    padding-top: 1rem;
+  }
+
+  .home-img img {
+    width: 400px;
+  }
+
+  .home-content h1 {
+    font-weight: 600;
+    line-height: 1.05;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .home-content h2 {
+    font-weight: 600;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .home-content button {
+    border-radius: 10px;
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    gap: 3rem;
+    border-radius: 1rem;
+    margin-top: -1.7rem;
+    padding-top: 4rem;
+  }
+
+  .home .home-content {
+    max-width: auto;
+    padding-top: 1rem;
+  }
+
+  .home-img img {
+    width: 300px;
+  }
+
+  .home-content h1 {
+    font-weight: 600;
+    line-height: 1.05;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .home-content h2 {
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .home-content p {
+    padding-bottom: 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  .home-content button {
+    border-radius: 6px;
+    padding: 6px 20px;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .home {
+    gap: 0rem;
+    border-radius: 1rem;
+    margin-top: -1.5rem;
+    padding-top: 2rem;
+    flex-direction: column;
+  }
+
+  .home .home-content {
+    max-width: auto;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 150px;
+  }
+
+  .home-content h1 {
+    font-weight: 600;
+    line-height: 1.05;
+    font-size: 0.8rem;
+    padding-bottom: 0rem;
+    text-align: center;
+  }
+
+  .home-content h2 {
+    font-weight: 600;
+    padding-bottom: 0rem;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .home-content p {
+    padding-bottom: 0.5rem;
+    font-size: 0.5rem;
+    margin-bottom: 3px;
+    text-align: center;
+  }
+
+  .home-content button {
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .home-img img {
+    width: 100px;
+  }
+}

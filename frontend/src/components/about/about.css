@@ -117,7 +117,6 @@
 }
 
 #tim .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 3rem;
   width: 18rem;
 }
@@ -251,7 +250,6 @@
   }
 
   #tim .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 3rem;
     width: 27rem;
   }
@@ -375,7 +373,6 @@
   }
 
   #tim .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 3rem;
     width: 21rem;
   }
@@ -517,7 +514,6 @@
   }
 
   #tim .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 3rem;
     width: 15rem;
   }
@@ -653,7 +649,6 @@
   }
 
   #tim .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 3.4rem;
     margin-top: 2rem;
     width: 12rem;

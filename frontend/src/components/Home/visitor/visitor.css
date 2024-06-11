@@ -3,6 +3,7 @@
 .visitor-section {
   padding: 50px;
   padding-bottom: 100px;
+  background-color: var(--color-section);
 }
 
 .visitor-title {
@@ -33,7 +34,7 @@
   width: 450px;
   border-radius: 20px;
   background-color: var(--color-bg);
-  border: 1px solid #000;
+  border: 1px solid #C4C4C4;
   position: relative;
 }
 
@@ -76,11 +77,254 @@
 .star-full_visitor {
   margin: 0 0.5rem;
   font-size: 1.5rem;
-  color: var(--color-Fifth);
+  color: gold;
 }
 
 .star-half_visitor {
   margin: 0 0.2rem;
   font-size: 1.5rem;
-  color: var(--color-Fifth);
+  color: gold;
+}
+
+@media screen and (max-width: 768px) {
+  .visitor-section {
+    padding: 50px;
+  }
+  
+  .visitor-title {
+    margin-bottom: 2rem;
+    padding-left: 0.7rem;
+    gap: 1.5rem;
+  }
+  
+  .visitor-title h2 {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+  }
+  
+  .visitor-list {
+    padding: 0 10px;
+    margin: 0 60px;
+    padding-bottom: 40px;
+    gap: 30px;
+  }
+  
+  .visitor-card {
+    width: 250px;
+    border-radius: 20px;
+  }
+  
+  .visitorCard_title {
+    height: 8rem;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .visitorCard_title p{
+    font-size: 0.7rem;
+  }
+  
+  .visitor_profile {
+    padding: 5px 20px;
+    border-radius: 10px;
+  }
+
+  .visitor_profile{
+    width: 7rem;
+  }
+  
+  .visitor-card-caption {
+    height: 7rem;
+    padding: 0 30px;
+    padding-top: 2rem;
+  }
+  
+  .visitor-card-caption h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .visitor-card-caption p {
+    font-size: 12px;
+    margin: 0.5rem;
+  }
+  
+  .star-full_visitor {
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+  
+  .star-half_visitor {
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+
+  .visitor-card-caption svg {
+    width: 13px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .visitor-section {
+    padding: 50px;
+  }
+  
+  .visitor-title {
+    margin-bottom: 2rem;
+    padding-left: 0rem;
+    gap: 1rem;
+  }
+  
+  .visitor-title h2 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .visitor-title img {
+    width: 30px;
+  }
+  
+  .visitor-list {
+    padding: 0 10px;
+    margin: 0 30px;
+    padding-bottom: 40px;
+    gap: 30px;
+  }
+  
+  .visitor-card {
+    width: 250px;
+    border-radius: 20px;
+  }
+  
+  .visitorCard_title {
+    height: 8rem;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .visitorCard_title p{
+    font-size: 0.7rem;
+  }
+  
+  .visitor_profile {
+    padding: 5px 20px;
+    border-radius: 10px;
+  }
+  .visitor_profile{
+    width: 7rem;
+  }
+  
+  .visitor-card-caption {
+    height: 7rem;
+    padding: 0 30px;
+    padding-top: 2rem;
+  }
+  
+  .visitor-card-caption h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .visitor-card-caption p {
+    font-size: 12px;
+    margin: 0.5rem;
+  }
+  
+  .star-full_visitor {
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+  
+  .star-half_visitor {
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+
+  .visitor-card-caption svg {
+    width: 13px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .visitor-section {
+    padding: 30px;
+  }
+  
+  .visitor-title {
+    margin-bottom: 2rem;
+    padding-left: 0rem;
+    gap: 0.5rem;
+  }
+  
+  .visitor-title h2 {
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .visitor-title img {
+    width: 20px;
+  }
+  
+  .visitor-list {
+    padding: 0 10px;
+    margin: 0 23px;
+    padding-bottom: 40px;
+    gap: 30px;
+  }
+  
+  .visitor-card {
+    width: 200px;
+    border-radius: 20px;
+  }
+  
+  .visitorCard_title {
+    height: 6rem;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .visitorCard_title p{
+    font-size: 0.55rem;
+  }
+  
+  .visitor_profile {
+    padding: 5px 20px;
+    border-radius: 10px;
+  }
+  .visitor_profile{
+    width: 6.5rem;
+  }
+  
+  .visitor-card-caption {
+    height: 6rem;
+    padding: 0 30px;
+    padding-top: 2rem;
+  }
+  
+  .visitor-card-caption h3 {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  
+  .visitor-card-caption p {
+    font-size: 8px;
+    margin: 0.2rem;
+  }
+  
+  .star-full_visitor {
+    margin: 0 0.2rem;
+    font-size: 1rem;
+  }
+  
+  .star-half_visitor {
+    margin: 0 0.2rem;
+    font-size: 1rem;
+  }
+
+  .visitor-card-caption svg {
+    width: 10px;
+  }
 }

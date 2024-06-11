@@ -2,7 +2,6 @@
 
 .kategori {
   padding: 3rem;
-  padding-top: 0;
   padding-bottom: 6rem;
   overflow: hidden;
 }
@@ -49,4 +48,183 @@
 
 .text-wrap:hover {
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1024px) {
+  .kategori {
+    padding: 3rem;
+    padding-bottom: 6rem;
+  }
+  
+  .kategori-title {
+    padding-left: 0.7rem;
+    gap: 1.5rem;
+  }
+  
+  .kategori-title h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .kategori .img {
+    height: 12rem;
+    width: 100%;
+  }
+  
+  .card-kategori {
+    width: 12rem;
+    height: 12rem;
+  }
+  
+  .cardCategory-text {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kategori {
+    padding: 3rem;
+    padding-bottom: 4rem;
+  }
+  
+  .kategori-title {
+    padding-left: 0.7rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 12rem;
+    margin-left: 4rem;
+  }
+
+  .card-img-overlay {
+    width: 12rem;
+  }
+  
+  .kategori-title h2 {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 2rem 0;
+  }
+  
+  .kategori .img {
+    height: 12rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .card-kategori .col {
+    width: 12rem;
+    height: 12rem;
+  }
+  
+  .cardCategory-text {
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .kategori {
+    padding: 3rem;
+    padding-bottom: 4rem;
+    overflow: hidden;
+  }
+  
+  .kategori-title {
+    display: flex;
+    align-items: center;
+    padding-left: 0rem;
+    gap: 1.5rem;
+  }
+  
+  .kategori-title h2 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .kategori-title img{
+    width: 30px;
+  }
+
+  .card {
+    width: 10rem;
+  }
+
+  .card-img-overlay {
+    width: 10rem;
+  }
+
+  .kategori .img {
+    height: 10rem;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .card-kategori {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .cardCategory-text {
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .kategori {
+    padding: 3rem;
+    padding-bottom: 4rem;
+    overflow: hidden;
+  }
+  
+  .kategori-title {
+    display: flex;
+    align-items: center;
+    padding-left: 0rem;
+    gap: 1.5rem;
+  }
+  
+  .kategori-title h2 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 2rem 0;
+    text-align: left;
+  }
+
+  .kategori-title img{
+    width: 20px;
+  }
+
+  .card {
+    width: 10rem;
+    margin-left: 1.5rem;
+  }
+
+  .card-img-overlay {
+    width: 10rem;
+  }
+  
+  .kategori .img {
+    height: 10rem;
+    width: 10rem;
+    justify-content: center;
+  }
+  
+  .card-kategori {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .cardCategory-text {
+    font-size: 1rem;
+    top: 50%;
+    left: 50%;
+  }
 }

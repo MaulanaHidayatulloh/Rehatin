@@ -1,9 +1,11 @@
+@import "../../../vars.css";
+
 .event {
   padding: 0;
   padding-bottom: 6rem;
   padding-right: 3rem;
   padding-left: 3rem;
-  background-color: var(--color-secondary);
+  background-color: var(--color-section);
 }
 
 .event-title {
@@ -77,4 +79,106 @@
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 1.25rem;
+}
+
+
+@media screen and (min-width: 1800px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  .event {
+    padding: 0;
+    padding-bottom: 4rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+  
+  .event-title {
+    display: flex;
+    align-items: center;
+    padding-left: 0.7rem;
+    gap: 1rem;
+  }
+  
+  .event-title h2 {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 2.5rem 0;
+  }
+  
+  .card-event h3 {
+    font-size: 22px;
+  }
+  
+  .card-event {
+    margin: 0 1rem;
+    padding: 3.5rem 0;
+  }
+  
+  .link {
+    padding: 4rem;
+  }
+}
+
+@media screen and (max-width: 426px) {  
+  .event {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    padding-left: 2rem;
+  }
+  .event-title {
+    padding-left: 0rem;
+    gap: 1rem;
+  }
+  
+  .event-title h2 {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 2rem 0;
+  }
+
+  .event-title img {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .event {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    padding-left: 2rem;
+  }
+  .event-title {
+    display: flex;
+    align-items: center;
+    padding-left: 0.7rem;
+    gap: 1rem;
+  }
+
+  .event-title img {
+    width: 20px;
+  }
+  
+  .event-title h2 {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 1.5rem 0;
+  }
+  
+  .card-event h3 {
+    font-size: 15px;
+  }
+  
+  .card-event {
+    margin: 0 1rem;
+    padding: 1.5rem 0;
+  }
+
+  
+  .link {
+    padding: 2rem;
+  }
 }
