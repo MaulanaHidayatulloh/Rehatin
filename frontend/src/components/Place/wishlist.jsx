@@ -44,14 +44,14 @@ const Wishlist = () => {
   return (
     <section className="wishlist">
       <h1>My Wishlist</h1>
-      <div className="places-list">
+      <div className="wishlistPlaces-list">
         {wishlist.length === 0 ? (
           <p>No places in wishlist.</p>
         ) : (
           wishlist.map((place) => (
-            <div className="place-card" key={place.id_tempat}>
+            <div className="wishlistPlace-card" key={place.id_tempat}>
               <Link to={`/places/${place.id_tempat}`} className="link_tempat">
-                <div className="place_gambar">
+                <div className="wishlistPlace_gambar">
                   <img
                     src={`data:image/png;base64,${place.gambarBase64}`}
                     alt={place.nama_tempat}
@@ -66,7 +66,7 @@ const Wishlist = () => {
                     <HeartFill className="love-icon loved" />
                   </div>
                 </div>
-                <div className="place_keterangan">
+                <div className="wishlistPlace_keterangan">
                   <h2>{place.nama_tempat}</h2>
                   <div className="place_rating">
                     <p id="nilai_rating">{place.averageRating}</p>
@@ -77,7 +77,7 @@ const Wishlist = () => {
                   </p>
                   <p className="place_deskripsi">{place.deskripsi}...</p>
                 </div>
-                <div className="place_harga">
+                <div className="wishlistPlace_harga">
                   <p>Perkiraan Harga :</p>
                   <p id="nilai_harga">Rp {place.harga}</p>
                 </div>

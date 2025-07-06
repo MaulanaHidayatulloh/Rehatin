@@ -1,8 +1,12 @@
 @import "../../vars.css";
 
-.place {
-  display: flex;
-  padding: 9rem 30px;
+.wishlist {
+  padding: 10rem 3rem;
+}
+
+.wishlist h1 {
+  font-weight: bold;
+  margin-bottom: 3rem;
 }
 
 .places_container {
@@ -29,32 +33,38 @@
 }
 
 /* Places list */
-.places-list {
+.wishlistPlaces-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
   height: 150vh;
   overflow: auto;
+  background-color: var(--color-secondary);
+  padding: 2rem;
+  border-radius: 15px;
 }
 
 /* Place card */
-.place-card {
+.wishlistPlace-card {
   display: flex;
   margin: 0 auto;
   border-radius: 10px;
   padding: 20px;
   border: 1px solid #ccc;
+  background-color: var(--color-bg);
+  width: 100%;
+  overflow: hidden;
 }
 
-.place_gambar {
+.wishlistPlace_gambar {
   position: relative;
-  width: 400px;
+  width: 430px;
   height: 268px;
 }
 
-.place_gambar img {
+.wishlistPlace_gambar img {
   width: 100%;
-
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -90,8 +100,8 @@
   color: #000;
 }
 
-.place_keterangan {
-  width: 400px;
+.wishlistPlace_keterangan {
+  width: 45%;
   margin-left: 2rem;
   display: flex;
   flex-direction: column;
@@ -107,12 +117,12 @@
   padding-bottom: 10px;
 }
 
-.place_harga {
+.wishlistPlace_harga {
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-left: 1px solid #ccc;
-  padding: 1.5rem;
+  padding: 2.5rem;
 }
 
 #nilai_harga {
