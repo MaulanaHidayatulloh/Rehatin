@@ -1,4 +1,4 @@
-# 🧭 Rehatin — Informasi Hangout & Wisata Jabodetabek
+# 🧭 Rehatin — Website Informasi Tempat Hangout & Wisata Jabodetabek & Bandung
 
 Rehatin adalah aplikasi web full-stack yang menyediakan informasi lengkap, ringkas, dan terpercaya mengenai tempat wisata serta hangout di wilayah Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi) & Bandung. Website ini dirancang untuk membantu pengguna menemukan tempat yang cocok untuk berkumpul, bersantai, atau berwisata sesuai kategori dan lokasi. Aplikasi ini dibangun menggunakan **React.js untuk frontend** dan **Express.js untuk backend**.
 
